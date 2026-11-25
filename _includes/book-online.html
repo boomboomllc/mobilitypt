@@ -1,30 +1,47 @@
-{%- comment -%}"Book online" buttons that open each clinic's Google Calendar booking page. Shows only when online_booking is on.
-Optional: key (one clinic only), compact=true (buttons only). A clinic without booking_url shows nothing, except a demo note while site.draft.{%- endcomment -%}
+{%- comment -%}"Book online" buttons that open each clinic's Google Calendar booking pages: first visits (booking_url) and, when online_followups is on, follow-ups (followup_url).
+Optional: key (one clinic only), compact=true (buttons only, for a clinic page). A missing link shows nothing, except a demo button while site.draft.{%- endcomment -%}
 {%- assign lang = page.lang | default: "en" -%}{%- assign t = site.data.i18n[lang] -%}{%- assign c = site.data.clinic -%}
 {%- if c.online_booking %}
-{%- assign shown = 0 %}{% assign missing = 0 %}
+{%- assign shown = 0 %}{% assign fshown = 0 %}{% assign missing = 0 %}
 {%- capture btns %}
   {%- for l in c.locations %}{% if include.key == nil or include.key == l.key %}
-  {%- if l.booking_url != "" and l.booking_url %}{% assign shown = shown | plus: 1 %}
-  <a class="btn btn-primary btn-lg" href="{{ l.booking_url }}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>{% if include.compact %}{{ t.book_online_h }}{% else %}{{ l.name }}{% endif %}<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
-  {%- elsif site.draft %}{% assign shown = shown | plus: 1 %}{% assign missing = missing | plus: 1 %}
-  <a class="btn btn-primary btn-lg" href="#online-demo"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>{% if include.compact %}{{ t.book_online_h }}{% else %}{{ l.name }}{% endif %}</a>
+  {%- if l.booking_url != "" and l.booking_url %}{% assign shown = shown | plus: 1 %}{% assign href = l.booking_url %}{% elsif site.draft %}{% assign shown = shown | plus: 1 %}{% assign missing = 1 %}{% assign href = "#online-demo" %}{% else %}{% assign href = nil %}{% endif %}
+  {%- if href %}
+  <a class="btn btn-primary btn-lg" href="{{ href }}"{% if href != "#online-demo" %} target="_blank" rel="noopener"{% endif %}><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>{% if include.compact %}{{ t.book_online_h }}{% else %}{{ l.name }}{% endif %}{% if href != "#online-demo" %}<span class="sr-only"> {{ t.opens_new_tab }}</span>{% endif %}</a>
   {%- endif %}{% endif %}{% endfor %}
 {%- endcapture %}
-{%- if shown > 0 %}
+{%- capture fbtns %}
+  {%- if c.online_followups %}{% for l in c.locations %}{% if include.key == nil or include.key == l.key %}
+  {%- if l.followup_url != "" and l.followup_url %}{% assign fshown = fshown | plus: 1 %}{% assign href = l.followup_url %}{% elsif site.draft %}{% assign fshown = fshown | plus: 1 %}{% assign missing = 1 %}{% assign href = "#online-demo" %}{% else %}{% assign href = nil %}{% endif %}
+  {%- if href %}
+  <a class="btn btn-secondary btn-lg" href="{{ href }}"{% if href != "#online-demo" %} target="_blank" rel="noopener"{% endif %}><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>{% if include.compact %}{{ t.book_followup_h }}{% else %}{{ l.name }}{% endif %}{% if href != "#online-demo" %}<span class="sr-only"> {{ t.opens_new_tab }}</span>{% endif %}</a>
+  {%- endif %}{% endif %}{% endfor %}{% endif %}
+{%- endcapture %}
+{%- if shown > 0 or fshown > 0 %}
 <div class="book-online{% if include.compact %} book-online-compact{% endif %}">
-  {%- unless include.compact %}
+  {%- if include.compact %}
+  <div class="book-online-btns">{{ btns }}{{ fbtns }}
+  </div>
+  {%- else %}
+  {%- if shown > 0 %}
   <h2>{{ t.book_online_h }}</h2>
   <p class="lead">{{ t.book_online_text }}</p>
-  {%- endunless %}
   <div class="book-online-btns">{{ btns }}
   </div>
-  <p class="form-note">{{ t.book_online_note }}</p>
+  {%- endif %}
+  {%- if fshown > 0 %}
+  <h3>{{ t.book_followup_h }}</h3>
+  <p>{{ t.book_followup_text }}</p>
+  <div class="book-online-btns">{{ fbtns }}
+  </div>
+  {%- endif %}
+  {%- endif %}
+  <p class="form-note">{% if fshown > 0 %}{{ t.book_contact_only }}{% else %}{{ t.book_online_note }}{% endif %}</p>
   {%- if missing > 0 %}
   <aside class="demo-note" id="online-demo" aria-label="About this demo">
     <span class="demo-tag">Demo</span>
-    <div><p><strong>Online booking.</strong> Each button opens the clinic's own Google Calendar booking page, where patients pick an open first-visit time. Names and times go straight into the clinic's Google account, never through this website.</p>
-    <p class="demo-needs"><span>To set up:</span> paid Google Workspace with Google's HIPAA agreement (BAA) turned on, Google Calendar as the clinic's real schedule, and one booking page per clinic asking for contact details only.</p></div>
+    <div><p><strong>Online booking.</strong> Each button opens one of the clinic's own Google Calendar booking pages: one for first visits and one for follow-ups at each clinic. Bookings land in the calendar already titled ("First visit" or "Follow-up"), and names and times go straight into the clinic's Google account, never through this website.</p>
+    <p class="demo-needs"><span>To set up:</span> paid Google Workspace with Google's HIPAA agreement (BAA) turned on, Google Calendar as the clinic's real schedule, and booking pages that ask for contact details only.</p></div>
   </aside>
   {%- endif %}
 </div>

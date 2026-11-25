@@ -1033,3 +1033,4 @@ button.bm-dot { border: 0; background: none; padding: 0; cursor: pointer; }
 .book-online-compact { margin-bottom: 16px; }
 .book-online-compact .book-online-btns .btn { flex: 1 1 100%; justify-content: flex-start; }
 .book-online .demo-note { margin-top: 16px; }
+.book-online h3 { margin: 24px 0 4px; }
