@@ -32,8 +32,8 @@ faq:
     <ol class="steps">
       <li>
         <span class="step-num">1</span>
-        <h3>Haga su cita en línea o llame</h3>
-        <p>Elija la clínica más cercana y una hora que le funcione.</p>
+        <h3>Llame para pedir su cita</h3>
+        <p>Llame a la clínica más cercana. Buscamos una hora que le funcione.</p>
       </li>
       <li>
         <span class="step-num">2</span>
@@ -47,8 +47,8 @@ faq:
       </li>
       <li>
         <span class="step-num">4</span>
-        <h3>Todo su plan, reservado{% if site.draft %} <span class="ph-tag">Clinic to confirm</span>{% endif %}</h3>
-        <p>Antes de que se vaya, programamos con usted todas sus visitas, para que sus horarios queden guardados y termine bien su plan.</p>
+        <h3>Sus próximas visitas</h3>
+        <p>Antes de irse, pida en la recepción que programen sus próximas visitas, para que sus horarios queden guardados.</p>
       </li>
     </ol>
     <p><a class="text-link" href="{{ '/resources/first-visit-what-to-expect/' | relative_url }}">Lea más sobre qué esperar en su primera visita <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
@@ -69,7 +69,7 @@ faq:
       </ul>
       <div class="notice">
         <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
-        <p><strong>Cuánto dura:</strong> <span class="ph-tag">Placeholder</span> Su primera visita dura unos [number] minutos. Por favor, llegue [number] minutos antes para registrarse.</p>
+        <p><strong>Cuánto dura:</strong> Cuando llame para pedir su cita, le diremos cuánto dura su primera visita y a qué hora llegar.</p>
       </div>
     </div>
     <div>
@@ -89,34 +89,12 @@ faq:
   <div class="wrap">
     <div class="section-head">
       <h2>Formularios para pacientes nuevos</h2>
-      <p class="lead">Llene sus formularios antes de su visita y pase menos tiempo en la recepción.</p>
+      <p class="lead">Imprima el formulario, llénelo en casa y tráigalo a su primera visita. Pasará menos tiempo en el registro.</p>
     </div>
-    <div class="split split-top">
-      <div class="panel">
-        <h3>Formularios en línea</h3>
-        <p class="muted">Toma unos minutos. Puede parar y seguir después.</p>
-        <label class="small" for="intake-progress">Paso 1 de 4</label>
-        <progress id="intake-progress" value="1" max="4">Paso 1 de 4</progress>
-        <ol class="check-list">
-          <li><span class="lg-num">1</span><span><strong>Datos personales</strong><br><span class="muted">Nombre, fecha de nacimiento y datos de contacto</span></span></li>
-          <li><span class="lg-num">2</span><span><strong>Seguro</strong><br><span class="muted">Su plan y una foto de su tarjeta</span></span></li>
-          <li><span class="lg-num">3</span><span><strong>Historial de salud</strong><br><span class="muted">Su lesión, cirugías anteriores y medicamentos</span></span></li>
-          <li><span class="lg-num">4</span><span><strong>Consentimiento y firma</strong><br><span class="muted">Revise y firme los formularios de la clínica</span></span></li>
-        </ol>
-        <form class="demo-form" data-demo-form data-ok="Sus formularios seguros se abrirían aquí." novalidate>
-          <button class="btn btn-primary btn-lg" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg>Empezar los formularios en línea</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-      </div>
-      <div>
-        {% include demo.html title="Online intake forms" does="New patients fill out and sign their paperwork on their phone before the first visit. Answers go straight to the clinic, so the front desk doesn't retype them." needs="A HIPAA-compliant e-forms or intake tool that signs a Business Associate Agreement (BAA). Health history must never go through a plain web form or email." anchor="intake" %}
-        <h3>¿Prefiere papel?</h3>
-        <p>Imprima los formularios, llénelos en casa y tráigalos a su primera visita.</p>
-        <p><button class="btn btn-secondary" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Descargar formularios para imprimir (PDF)</button></p>
-        {%- if site.draft %}
-        <p class="muted small"><span class="ph-tag">Placeholder</span> Aquí van los formularios actuales de la clínica para pacientes nuevos (PDF).</p>
-        {%- endif %}
-      </div>
+    <div class="forms-bar">
+      <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>
+      <p><strong>Formulario para pacientes nuevos (PDF, en inglés).</strong> ¿No puede imprimirlo? Llámenos y le ayudamos.</p>
+      <a class="btn btn-primary" href="{{ c.new_patient_form }}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Descargar el formulario<span class="sr-only"> (PDF, se abre en una pestaña nueva)</span></a>
     </div>
   </div>
 </section>
@@ -126,10 +104,10 @@ faq:
     <h2>Por qué importa completar todo su plan</h2>
     {%- if site.draft %}<p class="muted small"><span class="ph-tag">Draft copy</span> para que la clínica lo revise.</p>{% endif %}
     <p>La mayor parte del progreso en la terapia física viene del trabajo constante con el tiempo. Cada visita se apoya en la anterior, y venir con regularidad le ayuda a aprovechar su plan al máximo.</p>
-    <p>Por eso reservamos con usted todo su plan en su primera visita, o puede <a href="{{ '/es/book/' | relative_url }}">reservar todas sus visitas en línea</a> a la vez. Sus horarios quedan guardados, y puede mantener su ritmo. Si le surge algo, llámenos y le ayudamos a encontrar otra hora.</p>
+    <p>Por eso le ayudamos a programar sus visitas en su primera cita. Sus horarios quedan guardados, y puede mantener su ritmo. Si le surge algo, llámenos y le ayudamos a encontrar otra hora.</p>
     <div class="notice">
       <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-      <p><span class="ph-tag">Placeholder</span> Aquí va la política de la clínica sobre cancelaciones y citas perdidas, por ejemplo, con cuánto tiempo avisar cuando necesite cancelar.</p>
+      <p>¿Necesita cancelar o cambiar una visita? Llame a su clínica lo antes posible y le ayudamos a encontrar otra hora.</p>
     </div>
   </div>
 </section>
@@ -142,53 +120,23 @@ faq:
     </div>
     <div class="cards cards-3">
       <div class="card">
-        <h3>Pedir un cambio de cita</h3>
-        <p>Déjenos sus datos y le llamaremos para buscar otra hora.</p>
-        <form class="demo-form" data-demo-form data-ok="Gracias. Le llamaremos durante el horario de la clínica para buscar otra hora." novalidate>
-          <label>Nombre completo<input name="name" autocomplete="name" required></label>
-          <label>Teléfono<input name="phone" type="tel" autocomplete="tel" required></label>
-          <label>Clínica
-            <select name="clinic">
-              {%- for l in c.locations %}
-              <option>{{ l.name }}</option>
-              {%- endfor %}
-            </select>
-          </label>
-          <fieldset>
-            <legend>Días que le funcionan</legend>
-            <label class="check"><input type="checkbox" name="days" value="Monday"> Lunes</label>
-            <label class="check"><input type="checkbox" name="days" value="Tuesday"> Martes</label>
-            <label class="check"><input type="checkbox" name="days" value="Wednesday"> Miércoles</label>
-            <label class="check"><input type="checkbox" name="days" value="Thursday"> Jueves</label>
-          </fieldset>
-          <p class="form-note">Por favor, no incluya información médica aquí. ¿Necesita cancelar hoy? Por favor, llame a su clínica.</p>
-          <button class="btn btn-primary" type="submit">Enviar solicitud</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-        {% include demo.html title="Reschedule requests" does="Requests land in one shared inbox or task list for the front desk, so nothing gets lost between phone calls." needs="A secure form tool with a signed BAA that sends to the front desk. Even a name and phone from a current patient count as patient information." anchor="callback" %}
+        <h3>¿Necesita otra hora?</h3>
+        <p>Llame a su clínica y buscamos otra hora con usted.</p>
+        {%- for l in c.locations %}
+        <p><a href="tel:{{ l.phone_tel }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> {{ l.name }}: {{ l.phone }}</a></p>
+        {%- endfor %}
       </div>
       <div class="card">
-        <h3>Su programa de ejercicios en casa</h3>
-        <p>Vea los ejercicios que le dio su terapeuta, con fotos y videos.</p>
-        <form class="demo-form" data-demo-form data-ok="Su programa de ejercicios se abriría aquí." novalidate>
-          <label>Correo electrónico<input name="email" type="email" autocomplete="email" required></label>
-          <label>Código de acceso que le dio su terapeuta<input name="code" autocomplete="off" required></label>
-          <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg>Abrir mis ejercicios</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-        {% include demo.html title="Home exercise program" does="Patients log in to see their own exercises with videos, and therapists update them after each visit." needs="A home exercise program service the clinic signs up for, with a BAA. This box would link to its patient login." anchor="home-exercise" %}
+        <h3>Siga su progreso</h3>
+        <p>Anote su dolor y lo que puede hacer después de cada visita. Gratis y privado: se queda en su teléfono.</p>
+        <a class="text-link" href="{{ '/es/my-progress/' | relative_url }}">{{ site.data.progress.es.footer_link }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="card">
-        <h3>Pagar una factura</h3>
-        <p>Pague su saldo en línea con el número que aparece en su estado de cuenta.</p>
-        <form class="demo-form" data-demo-form data-ok="Su factura y la página de pago segura se abrirían aquí." novalidate>
-          <label>Número de estado de cuenta<input name="statement" autocomplete="off" required></label>
-          <label>Apellido<input name="last" autocomplete="family-name" required></label>
-          <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-dollar"/></svg>Buscar mi factura</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-        <p class="form-note">¿Preguntas sobre una factura? Llame a la clínica que le atendió.</p>
-        {% include demo.html title="Online bill pay" does="Patients pay a statement online any time, which can cut down on billing calls and mailed checks." needs="The clinic's billing or payment provider's secure payment page. Card details are only ever entered on the provider's page, never on this site." anchor="payments" %}
+        <h3>¿Preguntas sobre una factura?</h3>
+        <p>Llame a la clínica que le atendió. Con gusto la revisamos con usted.</p>
+        {%- for l in c.locations %}
+        <p><a href="tel:{{ l.phone_tel }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> {{ l.name }}: {{ l.phone }}</a></p>
+        {%- endfor %}
       </div>
     </div>
   </div>

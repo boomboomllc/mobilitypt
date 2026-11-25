@@ -34,7 +34,6 @@ schema_all_locations: true
       <h2>Ask us to call you back</h2>
       <p class="lead">Leave your name and number and we'll call you during clinic hours.</p>
       <p>Good for questions about insurance, referrals, scheduling or what to expect.</p>
-      {% include demo.html title="Call-back requests" does="Requests land in the clinic's inbox or front desk screen, so nobody has to wait on hold. Only a name, phone and preferred clinic are collected." needs="A secure form service that signs a HIPAA business associate agreement (BAA), and a front desk routine to call back the same day the clinic is open." anchor="callback" %}
     </div>
     <div class="panel">
       {% include callback-form.html %}
@@ -70,30 +69,6 @@ schema_all_locations: true
       </table>
       <p class="muted">Both clinics keep the same hours. Visits are by appointment.</p>
       <p>Follow us: <a href="{{ c.social.facebook }}" target="_blank" rel="noopener">Facebook</a> &middot; <a href="{{ c.social.instagram }}" target="_blank" rel="noopener">Instagram</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="chat">
-  <div class="wrap split split-top">
-    <div>
-      <h2>Questions? Ask us</h2>
-      <p class="lead">Quick answers to common questions, any time of day.</p>
-      {% include demo.html title="Questions assistant" does="A small chat box that answers general questions using only what's on this website: hours, locations, insurance, referrals and forms. It never asks for health details and hands anything else to the front desk." needs="A chat tool limited to the site's own pages, with a clear notice not to share medical information, reviewed by the clinic before it goes live." anchor="chat" %}
-    </div>
-    <div class="panel" aria-label="Example chat (demo)" role="group">
-      <div class="chat">
-        <p class="chat-msg chat-user"><strong>You:</strong> Are you open on Fridays?</p>
-        <p class="chat-msg chat-bot"><strong>Assistant:</strong> Both clinics are open {{ c.hours_short }}, and closed Friday to Sunday. You can still <a href="{{ '/book/' | relative_url }}">book online</a> any time.</p>
-        <p class="chat-msg chat-user"><strong>You:</strong> Do you take Medicare?</p>
-        <p class="chat-msg chat-bot"><strong>Assistant:</strong> Yes, we accept {{ c.insurance[0] }}. <a href="{{ '/insurance/' | relative_url }}">See every plan we accept</a>, or call and we'll check yours.</p>
-      </div>
-      <form class="demo-form" data-demo-form data-ok="Thanks for your question." novalidate>
-        <label>Your question<input name="question" required placeholder="Ask about hours, insurance or locations"></label>
-        <p class="form-note">General questions only. Please don't share medical details.</p>
-        <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>Ask</button>
-        <p class="form-msg" role="status"></p>
-      </form>
     </div>
   </div>
 </section>

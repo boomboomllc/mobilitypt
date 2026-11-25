@@ -1,74 +1,14 @@
 ---
 layout: default
 ref: book
-title: Book online
-seo_title: Book Physical Therapy in Tustin or Lake Forest, CA
-description: Book physical therapy online at our Tustin or Lake Forest clinic. Book your first visit, your next visit or your whole plan of care.
-heading: Book a visit or your whole plan
-intro: New patients can book a first visit. Current patients can book their next visit or every visit in their plan at once.
+title: "Book a visit"
+seo_title: "Book Physical Therapy in Tustin or Lake Forest, CA"
+description: "Call our Tustin or Lake Forest clinic to book physical therapy. Our front desk finds a time that works for you and checks your insurance."
+heading: "Call to book your visit"
+intro: "The quickest way to book is a phone call. Our front desk finds a time that works for you and checks your insurance before you come in."
 breadcrumbs:
-  - name: Book online
+  - name: "Book a visit"
     url: /book/
 ---
-{%- assign c = site.data.clinic -%}
 {% include page-hero.html %}
-
-<section class="section">
-  <div class="wrap split split-top">
-    <div>
-      <h2>What happens after you book</h2>
-      <div class="split-points">
-        <div class="point">
-          <span class="point-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
-          <div>
-            <h3>We call to confirm</h3>
-            <p>We check your insurance and whether your plan needs a doctor's referral or authorization. If it does, we'll tell you what to do next.</p>
-          </div>
-        </div>
-        <div class="point">
-          <span class="point-icon"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
-          <div>
-            <h3>Your evaluation</h3>
-            <p>Your therapist listens, looks at how you move and talks through a plan with you. Bring a photo ID, your insurance card and your <a href="{{ '/new-patients-center/#forms' | relative_url }}">new patient forms</a>.</p>
-          </div>
-        </div>
-        <div class="point">
-          <span class="point-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
-          <div>
-            <h3>Book your whole plan</h3>
-            <p>Once you know your plan, book every visit at once here, or we'll set them up with you before you leave. Need to change one? Just call.</p>
-          </div>
-        </div>
-      </div>
-
-      <h3>Rather call?</h3>
-      <ul class="check-list">
-        {%- for l in c.locations %}
-        <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>{{ l.name }}: <a href="tel:{{ l.phone_tel }}">{{ l.phone }}</a></span></li>
-        {%- endfor %}
-        <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>{{ c.hours_text }}</span></li>
-      </ul>
-
-      {% include demo.html title="Online booking" does="Patients book a first visit, their next visit or their whole plan of care, day or night, and the front desk sees it right away. Times shown here are samples." needs="A HIPAA-covered scheduler or calendar that signs a BAA, set up with the clinic's real evaluation slots." anchor="booking" %}
-      {% include demo.html title="Text reminders" does="Patients get a text before each visit and can reply to confirm, which can help cut down on missed visits." needs="A HIPAA-covered texting or reminder service with a BAA, plus each patient's OK to receive texts." anchor="reminders" %}
-    </div>
-    <div>
-      {% include booker.html %}
-      <p class="form-note">This form is for scheduling only. In a medical emergency, call 911.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Prefer to talk to someone?</h2>
-      <p class="lead">Call the clinic closest to you. We're happy to answer questions before you book.</p>
-    </div>
-    <div class="locations">
-      {%- for l in c.locations %}
-      {% include location-card.html key=l.key %}
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+{% include book-call.html %}

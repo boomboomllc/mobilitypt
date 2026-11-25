@@ -37,7 +37,6 @@ faq:
         <li>Spine surgery, when your surgeon clears you for therapy</li>
         <li>Foot, ankle, hand and wrist surgery, including after a fracture</li>
       </ul>
-      <p class="muted small"><span class="ph-tag">Placeholder</span> The clinic confirms which surgeries it sees most.</p>
 
       <p><a class="text-link" href="{{ '/recovery-guides/' | relative_url }}">Read our recovery guides for common surgeries <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
 
@@ -45,7 +44,6 @@ faq:
       <p>At your first visit, your therapist reviews your surgeon's instructions, checks your swelling, motion and strength, and asks about your daily life and goals. Together you build a plan that follows your surgeon's protocol.</p>
       <p>Visits then move forward in stages: gentle motion first, then strength, balance and the everyday tasks that matter to you, like stairs, driving or getting back to work. You also get a home program for the days between visits.</p>
 
-      {% include demo.html title="Home exercise program" does="Your therapist sends your exercises to your phone with short videos and reminders, so you follow your plan safely between visits." needs="A home exercise program service the clinic signs up for, with a HIPAA business associate agreement." anchor="home-exercise" %}
 
       <h2>How long recovery takes</h2>
       <p>It depends on your surgery, your health and your surgeon's protocol. Your therapist will give you a plan after your evaluation and update it as you improve.</p>
@@ -65,7 +63,7 @@ faq:
     <aside class="aside-card" aria-labelledby="aside-h">
       <h2 id="aside-h">Book your first visit</h2>
       <p>Have your surgeon's prescription handy. We'll check your coverage first.</p>
-      <a class="btn btn-primary" href="{{ '/book/' | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Book online</a>
+      <a class="btn btn-primary" href="{{ '/book/' | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Book a visit</a>
       {%- for l in c.locations %}
       <a class="btn btn-secondary" href="tel:{{ l.phone_tel }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call {{ l.name }} {{ l.phone }}</a>
       {%- endfor %}

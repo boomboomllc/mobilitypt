@@ -40,32 +40,13 @@ faq:
 <section class="section section-alt" id="check-benefits">
   <div class="wrap split split-top">
     <div>
-      <h2>Kiểm tra quyền lợi bảo hiểm của tôi</h2>
-      <p class="lead">Chưa chắc chương trình của quý vị chi trả những gì? Xin để lại tên và số điện thoại, chúng tôi sẽ gọi báo cho quý vị biết quyền lợi bảo hiểm.</p>
+      <h2>Kiểm tra quyền lợi bảo hiểm</h2>
+      <p class="lead">Không rõ chương trình của quý vị chi trả những gì? Xin gọi cho chúng tôi và chuẩn bị sẵn thẻ bảo hiểm, chúng tôi sẽ kiểm tra quyền lợi cho quý vị.</p>
       <ul class="trust">
-        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Không cần số thẻ hội viên (member ID) ở đây. Chúng tôi sẽ hỏi qua điện thoại.</li>
-        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Chúng tôi sẽ cho quý vị biết chương trình có cần giấy giới thiệu hoặc giấy chấp thuận không.</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Chúng tôi sẽ cho quý vị biết chương trình có cần giấy giới thiệu hoặc giấy phép trước không.</li>
       </ul>
-      {% include demo.html title="Online benefits check" does="Patients ask for a benefits check from the website, and staff call back with their coverage, copay and referral needs. Later, an eligibility tool could check some plans automatically." needs="A secure form tool with a signed HIPAA business associate agreement (BAA), since a name with an insurance plan is patient information. An automatic eligibility check would need a HIPAA-covered eligibility service, usually through the clinic's billing software." anchor="insurance-check" %}
     </div>
-    <div class="panel">
-      <form class="demo-form" data-demo-form data-ok="Xin cảm ơn. Chúng tôi sẽ gọi báo quyền lợi bảo hiểm cho quý vị trong giờ làm việc của phòng khám." novalidate>
-        <label>Họ và tên<input name="name" autocomplete="name" required></label>
-        <label>Điện thoại<input name="phone" type="tel" autocomplete="tel" required></label>
-        <label>Công ty bảo hiểm
-          <select name="insurance" required>
-            <option value="">Chọn chương trình của quý vị</option>
-            {%- for i in c.insurance %}
-            <option>{{ i }}</option>
-            {%- endfor %}
-            <option>Khác</option>
-          </select>
-        </label>
-        <p class="form-note">Xin đừng ghi số thẻ hội viên hoặc bất kỳ thông tin y tế nào ở đây.</p>
-        <button class="btn btn-primary btn-lg" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Kiểm tra quyền lợi bảo hiểm của tôi</button>
-        <p class="form-msg" role="status"></p>
-      </form>
-    </div>
+    {% include call-panel.html %}
   </div>
 </section>
 
@@ -105,7 +86,7 @@ faq:
       <div class="feature">
         <span class="point-icon"><svg class="icon" aria-hidden="true"><use href="#i-dollar"/></svg></span>
         <h3>Giá trả tiền mặt</h3>
-        <p>Không có bảo hiểm, hoặc muốn tự trả? Chúng tôi có giá trả tiền mặt. <span class="ph-tag">Placeholder</span> Giá tiền mặt mỗi buổi: $[amount].</p>
+        <p>Không có bảo hiểm, hoặc muốn tự trả? Chúng tôi có giá trả tiền mặt. Xin gọi một trong hai phòng khám để biết giá hiện tại.</p>
       </div>
     </div>
   </div>
@@ -125,4 +106,4 @@ faq:
   </div>
 </section>
 
-{% include cta.html heading="Có thắc mắc về bảo hiểm?" text="Đặt hẹn trực tuyến, chúng tôi sẽ kiểm tra bảo hiểm của quý vị trước lần khám đầu tiên, hoặc xin gọi cho phòng khám gần quý vị nhất." %}
+{% include cta.html heading="Có thắc mắc về bảo hiểm?" text="Gọi cho phòng khám gần quý vị nhất, chúng tôi sẽ kiểm tra bảo hiểm trước lần khám đầu tiên." %}

@@ -1,0 +1,44 @@
+{%- comment -%}The Book page: booking is by phone. Words live in _data/i18n (book_*).{%- endcomment -%}
+{%- assign lang = page.lang | default: "en" -%}{%- assign t = site.data.i18n[lang] -%}{%- assign c = site.data.clinic -%}
+<section class="section">
+  <div class="wrap">
+    <div class="locations">
+      {%- for l in c.locations %}
+      {% include location-card.html key=l.key %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap split split-top">
+    <div>
+      <h2>{{ t.book_ready_h }}</h2>
+      <ul class="check-list">
+        {%- for r in t.book_ready %}
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>{{ r }}</span></li>
+        {%- endfor %}
+      </ul>
+      <p><a class="text-link" href="{{ t.prefix | append: '/new-patients-center/#forms' | relative_url }}">{{ t.book_forms_link }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      <h3>{{ t.book_closed_h }}</h3>
+      <p>{{ t.book_closed }}</p>
+      <p><a class="text-link" href="{{ t.prefix | append: '/contact/#callback' | relative_url }}">{{ t.book_callback_link }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      <p class="muted small">{{ t.emergency_911 }}</p>
+    </div>
+    <div>
+      <h2>{{ t.book_next_h }}</h2>
+      <div class="split-points">
+        {%- assign icons = "shield,clipboard,calendar" | split: "," %}
+        {%- for n in t.book_next %}
+        <div class="point">
+          <span class="point-icon"><svg class="icon" aria-hidden="true"><use href="#i-{{ icons[forloop.index0] }}"/></svg></span>
+          <div>
+            <h3>{{ n[0] }}</h3>
+            <p>{{ n[1] }}</p>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>

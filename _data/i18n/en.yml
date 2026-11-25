@@ -13,7 +13,7 @@ nav:
   - [Insurance, /insurance/]
   - [Locations, /locations/]
   - [About, /about/]
-book_online: Book online
+book_online: "Book a visit"
 book: Book
 for_physicians: For physicians
 quick_actions: Quick actions
@@ -32,6 +32,23 @@ hours_short: Mon to Thu, 8 am to 7 pm
 hours_closed: Fri to Sun, closed
 week_days: [Mo, Tu, We, Th, Fr, Sa, Su]
 hours_time: "8 am – 7 pm"
+# Call-first booking
+call_either: "Call either clinic"
+book_ready_h: "Have these ready when you call"
+book_ready:
+  - "Your insurance card"
+  - "Your doctor's referral or prescription, if you have one"
+  - "The days and times that work for you"
+book_next_h: "What happens next"
+book_next:
+  - ["We check your insurance", "We check your benefits and whether your plan needs a referral or authorization. If it does, we'll tell you what to do next."]
+  - ["Your first visit", "Your therapist listens, looks at how you move and talks through a plan with you. Bring a photo ID, your insurance card and your new patient form."]
+  - ["Your next visits", "Before you leave, the front desk helps you schedule your next visits. Need to change one? Just call."]
+book_closed_h: "Calling after hours?"
+book_closed: "Ask us to call you back, and we'll call you when the clinic is open."
+book_callback_link: "Ask us to call you back"
+book_forms_link: "Get the new patient form"
+emergency_911: "In a medical emergency, call 911."
 hours_text: Monday to Thursday, 8 am to 7 pm. Friday to Sunday, closed. By appointment.
 language: Language
 breadcrumb: Breadcrumb
@@ -54,7 +71,7 @@ reviews_note: Shared by our patients. Everyone's recovery is different.
 leave_review: Leave us a review
 # CTA band
 cta_heading: Ready to feel better?
-cta_text: Book your first visit online in about a minute, or call the clinic closest to you.
+cta_text: "Call the clinic closest to you. We'll find a time that works and check your insurance."
 # Insurance list
 ins_search_label: Search your insurance plan
 ins_search_placeholder: Type your insurance plan, like Aetna or Medicare

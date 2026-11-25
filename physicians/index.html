@@ -34,15 +34,10 @@ schema_all_locations: true
       {%- endfor %}
     </div>
     <div class="ref-facts">
-      <div><span class="kicker">New patients seen</span><p>{% if site.draft %}<span class="ph-tag">Placeholder</span> Within [number] business days of your referral.{% endif %}</p></div>
+      <div><span class="kicker">New patients seen</span><p>Call either clinic to check the next opening.</p></div>
       <div><span class="kicker">Coverage</span><p>Medicare Part B, many PPOs, local medical groups, auto MedPay and workers' comp. <a href="{{ '/insurance/' | relative_url }}">Full list</a></p></div>
-      <div><span class="kicker">On the referral</span><p>{% if site.draft %}<span class="ph-tag">Placeholder</span> What the clinic needs on the order (for example diagnosis and visit count).{% endif %}</p></div>
-      <div><span class="kicker">Progress reports</span><p>{% if site.draft %}<span class="ph-tag">Placeholder</span> How and how often you hear back.{% endif %}</p></div>
-    </div>
-    <div class="forms-bar">
-      <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>
-      <p><strong>Referral form (PDF).</strong> A one-page form your office can print and fax. {% if site.draft %}<span class="ph-tag">Placeholder</span> The clinic supplies the form, or we make one with them.{% endif %}</p>
-      <button class="btn btn-secondary" type="button" disabled>Download referral form (PDF)</button>
+      <div><span class="kicker">On the referral</span><p>Call either clinic and we'll tell you what we need on the order.</p></div>
+      <div><span class="kicker">Progress reports</span><p>Call the clinic to set up how you'd like to get them.</p></div>
     </div>
   </div>
 </section>
@@ -100,54 +95,9 @@ schema_all_locations: true
       <li>
         <span class="step-num">4</span>
         <h3>We keep you informed</h3>
-        <p>Progress reports to the referring provider. {% if site.draft %}<span class="ph-tag">Placeholder</span> Clinic to confirm how and when these are sent.{% endif %}</p>
+        <p>We share progress with the referring provider. Questions? Call the clinic anytime.</p>
       </li>
     </ol>
-  </div>
-</section>
-
-<section class="section section-alt" id="referral-form">
-  <div class="wrap split split-top">
-    <div>
-      <h2>Refer online</h2>
-      <p class="lead">Prefer not to fax? Send us the basics and we'll take it from there.</p>
-      <p>This form asks only for contact details. Please send orders, diagnoses and other clinical notes by fax.</p>
-      {% include demo.html title="Online referral form" does="Doctor's offices send a referral from any browser. The clinic gets it in a secure inbox and calls the patient. This version asks only for contact details." needs="A HIPAA-secure form tool with a signed BAA, since a real referral carries patient health information. Until then, fax stays the way to send clinical details." anchor="referrals" %}
-    </div>
-    <div class="panel">
-      <form class="demo-form" data-demo-form data-ok="Thanks. We'll contact the patient to schedule." novalidate>
-        <fieldset>
-          <legend>Your office</legend>
-          <div class="cards">
-            <label>Provider name<input name="provider" autocomplete="name" required></label>
-            <label>Practice or medical group<input name="practice" autocomplete="organization" required></label>
-            <div class="field-row">
-              <label>Office phone<input name="office_phone" type="tel" autocomplete="tel" required></label>
-              <label>Office fax<input name="office_fax" type="tel"></label>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Patient</legend>
-          <div class="field-row">
-            <label>Patient first name<input name="patient_first" required></label>
-            <label>Patient phone<input name="patient_phone" type="tel" required></label>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Preferred clinic</legend>
-          <div class="choice-row">
-            {%- for l in c.locations %}
-            <label class="choice"><input type="radio" name="clinic" value="{{ l.name }}"{% if forloop.first %} checked{% endif %}>{{ l.name }}</label>
-            {%- endfor %}
-            <label class="choice"><input type="radio" name="clinic" value="Either">Either</label>
-          </div>
-        </fieldset>
-        <p class="form-note">Please don't include diagnoses, orders or other medical details here. Fax those to the clinic.</p>
-        <button class="btn btn-primary btn-lg" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>Send referral</button>
-        <p class="form-msg" role="status"></p>
-      </form>
-    </div>
   </div>
 </section>
 
@@ -167,4 +117,4 @@ schema_all_locations: true
   </div>
 </section>
 
-{% include cta.html heading="Your patient can book online too" text="Patients can pick a time for their first visit online, or call either clinic." %}
+{% include cta.html heading="Your patient can call us directly" text="Patients can call either clinic to book their first visit. We'll check their insurance first." %}

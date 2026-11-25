@@ -13,7 +13,7 @@ nav:
   - [Seguros, /es/insurance/]
   - [Ubicaciones, /es/locations/]
   - [Quiénes somos, /about/]
-book_online: Haga su cita en línea
+book_online: "Pida una cita"
 book: Cita
 for_physicians: Para médicos
 quick_actions: Acciones rápidas
@@ -32,6 +32,23 @@ hours_short: Lun. a jue., 8 a.m. a 7 p.m.
 hours_closed: Vie. a dom., cerrado
 week_days: [Lu, Ma, Mi, Ju, Vi, Sá, Do]
 hours_time: "8 a.m. – 7 p.m."
+# Call-first booking
+call_either: "Llame a cualquiera de las clínicas"
+book_ready_h: "Tenga esto a mano cuando llame"
+book_ready:
+  - "Su tarjeta del seguro"
+  - "La orden o referido de su médico, si lo tiene"
+  - "Los días y horas que le convienen"
+book_next_h: "Qué pasa después"
+book_next:
+  - ["Revisamos su seguro", "Revisamos sus beneficios y si su plan necesita un referido o una autorización. Si es así, le diremos qué hacer."]
+  - ["Su primera visita", "Su terapeuta le escucha, ve cómo se mueve y habla con usted sobre un plan. Traiga una identificación con foto, su tarjeta del seguro y su formulario de paciente nuevo."]
+  - ["Sus próximas visitas", "Antes de irse, la recepción le ayuda a programar sus próximas visitas. ¿Necesita cambiar una? Solo llame."]
+book_closed_h: "¿Llama fuera del horario?"
+book_closed: "Pídanos que le llamemos y le llamaremos cuando la clínica esté abierta."
+book_callback_link: "Pedir que le llamemos"
+book_forms_link: "Formulario para pacientes nuevos"
+emergency_911: "En una emergencia médica, llame al 911."
 hours_text: Lunes a jueves, de 8 a.m. a 7 p.m. Viernes a domingo, cerrado. Solo con cita.
 language: Idioma
 breadcrumb: Ruta de navegación
@@ -54,7 +71,7 @@ reviews_note: Compartido por nuestros pacientes. La recuperación de cada person
 leave_review: Déjenos una reseña
 # CTA band
 cta_heading: ¿Listo para sentirse mejor?
-cta_text: Haga su primera cita en línea en más o menos un minuto, o llame a la clínica más cercana.
+cta_text: "Llame a la clínica más cercana. Buscamos un horario que le convenga y revisamos su seguro."
 # Insurance list
 ins_search_label: Busque su plan de seguro
 ins_search_placeholder: Escriba su plan de seguro, como Aetna o Medicare

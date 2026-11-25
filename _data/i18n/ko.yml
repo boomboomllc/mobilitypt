@@ -13,7 +13,7 @@ nav:
   - [보험, /ko/insurance/]
   - [위치, /ko/locations/]
   - [소개, /about/]
-book_online: 온라인 예약
+book_online: "예약하기"
 book: 예약
 for_physicians: 의사 선생님께
 quick_actions: 빠른 메뉴
@@ -33,6 +33,23 @@ hours_short: 월~목, 오전 8시~오후 7시
 hours_closed: 금~일, 휴무
 week_days: [월, 화, 수, 목, 금, 토, 일]
 hours_time: "오전 8시 – 오후 7시"
+# Call-first booking
+call_either: "가까운 클리닉에 전화하세요"
+book_ready_h: "전화하실 때 준비해 주세요"
+book_ready:
+  - "보험 카드"
+  - "의사 소견서나 처방전(있는 경우)"
+  - "가능한 요일과 시간"
+book_next_h: "다음 단계"
+book_next:
+  - ["보험 확인", "보험 혜택과 의뢰서나 사전 승인이 필요한지 확인해 드립니다. 필요하면 다음에 할 일을 안내해 드립니다."]
+  - ["첫 방문", "치료사가 이야기를 듣고 움직임을 살펴본 뒤 치료 계획을 함께 세웁니다. 사진이 있는 신분증, 보험 카드, 신규 환자 서류를 가져오세요."]
+  - ["다음 방문", "돌아가시기 전에 접수 직원이 다음 방문 예약을 도와드립니다. 예약을 바꾸셔야 하면 전화만 주세요."]
+book_closed_h: "진료 시간 외에 전화하시나요?"
+book_closed: "전화 요청을 남겨 주시면 진료 시간에 다시 전화드리겠습니다."
+book_callback_link: "전화 요청하기"
+book_forms_link: "신규 환자 서류"
+emergency_911: "응급 상황에서는 911에 전화하세요."
 hours_text: 월요일~목요일, 오전 8시~오후 7시. 금요일~일요일, 휴무. 예약제로 운영합니다.
 language: 언어
 breadcrumb: 현재 위치
@@ -56,7 +73,7 @@ reviews_note: 저희 환자분들이 남겨 주신 글입니다. 회복 과정�
 leave_review: 후기 남기기
 # CTA band
 cta_heading: 이제 몸이 편안해질 준비가 되셨나요?
-cta_text: 약 1분이면 온라인으로 첫 방문을 예약하실 수 있습니다. 가까운 클리닉에 전화하셔도 됩니다.
+cta_text: "가까운 클리닉에 전화하세요. 편한 시간을 찾아 드리고 보험을 확인해 드립니다."
 # Insurance list
 ins_search_label: 보험 플랜 검색
 ins_search_placeholder: Aetna나 Medicare처럼 보험 플랜 이름을 입력하세요

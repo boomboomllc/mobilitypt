@@ -22,7 +22,7 @@ layout: default
     <aside class="aside-card" aria-labelledby="aside-h">
       <h2 id="aside-h">Start your rehab</h2>
       <p>Have your surgeon's prescription handy. We'll check your coverage first.</p>
-      <a class="btn btn-primary" href="{{ '/book/' | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Book online</a>
+      <a class="btn btn-primary" href="{{ '/book/' | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Book a visit</a>
       {%- for l in c.locations %}
       <a class="btn btn-secondary" href="tel:{{ l.phone_tel }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call {{ l.name }} {{ l.phone }}</a>
       {%- endfor %}

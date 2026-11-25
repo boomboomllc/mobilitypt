@@ -32,8 +32,8 @@ faq:
     <ol class="steps">
       <li>
         <span class="step-num">1</span>
-        <h3>Đặt hẹn trực tuyến hoặc gọi điện</h3>
-        <p>Chọn phòng khám gần quý vị nhất và giờ thuận tiện cho quý vị.</p>
+        <h3>Gọi để đặt hẹn</h3>
+        <p>Gọi cho phòng khám gần quý vị nhất. Chúng tôi sẽ tìm giờ thuận tiện cho quý vị.</p>
       </li>
       <li>
         <span class="step-num">2</span>
@@ -47,8 +47,8 @@ faq:
       </li>
       <li>
         <span class="step-num">4</span>
-        <h3>Đặt hẹn toàn bộ liệu trình{% if site.draft %} <span class="ph-tag">Clinic to confirm</span>{% endif %}</h3>
-        <p>Trước khi quý vị ra về, chúng tôi cùng quý vị sắp xếp tất cả các buổi khám, để giờ hẹn được giữ sẵn và quý vị hoàn thành liệu trình thật tốt.</p>
+        <h3>Các lần khám tiếp theo</h3>
+        <p>Trước khi ra về, xin nhờ nhân viên tiếp tân đặt các lần khám tiếp theo, để giờ hẹn của quý vị được giữ sẵn.</p>
       </li>
     </ol>
     <p><a class="text-link" href="{{ '/resources/first-visit-what-to-expect/' | relative_url }}">Đọc thêm về những gì sẽ diễn ra trong lần khám đầu tiên <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
@@ -69,7 +69,7 @@ faq:
       </ul>
       <div class="notice">
         <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
-        <p><strong>Thời gian khám:</strong> <span class="ph-tag">Placeholder</span> Lần khám đầu tiên mất khoảng [number] phút. Xin đến sớm [number] phút để làm thủ tục.</p>
+        <p><strong>Thời gian khám:</strong> Khi quý vị gọi đặt hẹn, chúng tôi sẽ cho biết lần khám đầu tiên mất bao lâu và nên đến lúc mấy giờ.</p>
       </div>
     </div>
     <div>
@@ -88,35 +88,13 @@ faq:
 <section class="section" id="forms">
   <div class="wrap">
     <div class="section-head">
-      <h2>Giấy tờ dành cho bệnh nhân mới</h2>
-      <p class="lead">Điền giấy tờ trước khi đến khám để làm thủ tục nhanh hơn.</p>
+      <h2>Mẫu đơn bệnh nhân mới</h2>
+      <p class="lead">Xin in mẫu đơn, điền ở nhà và mang theo trong lần khám đầu tiên. Quý vị sẽ mất ít thời gian hơn khi làm thủ tục.</p>
     </div>
-    <div class="split split-top">
-      <div class="panel">
-        <h3>Giấy tờ trực tuyến</h3>
-        <p class="muted">Chỉ mất vài phút. Quý vị có thể ngừng giữa chừng và quay lại sau.</p>
-        <label class="small" for="intake-progress">Bước 1 trong 4</label>
-        <progress id="intake-progress" value="1" max="4">Bước 1 trong 4</progress>
-        <ol class="check-list">
-          <li><span class="lg-num">1</span><span><strong>Thông tin cá nhân</strong><br><span class="muted">Họ tên, ngày sinh và thông tin liên lạc</span></span></li>
-          <li><span class="lg-num">2</span><span><strong>Bảo hiểm</strong><br><span class="muted">Chương trình bảo hiểm và hình chụp thẻ của quý vị</span></span></li>
-          <li><span class="lg-num">3</span><span><strong>Tiền sử sức khỏe</strong><br><span class="muted">Chấn thương, các lần phẫu thuật trước đây và thuốc đang dùng</span></span></li>
-          <li><span class="lg-num">4</span><span><strong>Đồng ý và ký tên</strong><br><span class="muted">Xem lại và ký các giấy tờ của phòng khám</span></span></li>
-        </ol>
-        <form class="demo-form" data-demo-form data-ok="Giấy tờ bảo mật của quý vị sẽ mở ở đây." novalidate>
-          <button class="btn btn-primary btn-lg" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg>Bắt đầu điền giấy tờ trực tuyến</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-      </div>
-      <div>
-        {% include demo.html title="Online intake forms" does="New patients fill out and sign their paperwork on their phone before the first visit. Answers go straight to the clinic, so the front desk doesn't retype them." needs="A HIPAA-compliant e-forms or intake tool that signs a Business Associate Agreement (BAA). Health history must never go through a plain web form or email." anchor="intake" %}
-        <h3>Quý vị thích dùng giấy?</h3>
-        <p>In giấy tờ ra, điền ở nhà và mang theo khi đến khám lần đầu.</p>
-        <p><button class="btn btn-secondary" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Tải giấy tờ để in (PDF)</button></p>
-        {%- if site.draft %}
-        <p class="muted small"><span class="ph-tag">Placeholder</span> Giấy tờ dành cho bệnh nhân mới hiện tại của phòng khám (PDF) sẽ được đặt ở đây.</p>
-        {%- endif %}
-      </div>
+    <div class="forms-bar">
+      <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>
+      <p><strong>Mẫu đơn bệnh nhân mới (PDF, tiếng Anh).</strong> Không in được? Xin gọi cho chúng tôi, chúng tôi sẽ giúp.</p>
+      <a class="btn btn-primary" href="{{ c.new_patient_form }}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Tải mẫu đơn<span class="sr-only"> (PDF, mở trong thẻ mới)</span></a>
     </div>
   </div>
 </section>
@@ -126,10 +104,10 @@ faq:
     <h2>Vì sao cần theo hết liệu trình</h2>
     {%- if site.draft %}<p class="muted small"><span class="ph-tag">Draft copy</span> để phòng khám xem lại.</p>{% endif %}
     <p>Phần lớn tiến bộ trong vật lý trị liệu đến từ việc tập đều đặn theo thời gian. Mỗi buổi khám đều tiếp nối buổi trước, và đến khám đều đặn giúp quý vị được lợi ích nhiều nhất từ liệu trình của mình.</p>
-    <p>Vì vậy, chúng tôi cùng quý vị đặt hẹn toàn bộ liệu trình ngay trong lần khám đầu tiên, hoặc quý vị có thể <a href="{{ '/vi/book/' | relative_url }}">đặt tất cả các buổi trực tuyến</a> cùng một lúc. Giờ hẹn của quý vị được giữ sẵn, và quý vị có thể duy trì đà tiến bộ. Nếu có việc đột xuất, xin gọi cho chúng tôi, chúng tôi sẽ giúp quý vị tìm giờ khác.</p>
+    <p>Vì vậy, chúng tôi giúp quý vị đặt lịch các buổi khám ngay trong lần khám đầu tiên. Giờ hẹn của quý vị được giữ sẵn, và quý vị có thể duy trì đà tiến bộ. Nếu có việc đột xuất, xin gọi cho chúng tôi, chúng tôi sẽ giúp quý vị tìm giờ khác.</p>
     <div class="notice">
       <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-      <p><span class="ph-tag">Placeholder</span> Quy định của phòng khám về việc hủy hẹn và vắng mặt sẽ được đặt ở đây, ví dụ cần báo trước bao lâu khi quý vị muốn hủy hẹn.</p>
+      <p>Cần hủy hoặc đổi hẹn? Xin gọi cho phòng khám càng sớm càng tốt, chúng tôi sẽ giúp quý vị tìm giờ khác.</p>
     </div>
   </div>
 </section>
@@ -142,53 +120,23 @@ faq:
     </div>
     <div class="cards cards-3">
       <div class="card">
-        <h3>Yêu cầu đổi lịch hẹn</h3>
-        <p>Để lại thông tin, chúng tôi sẽ gọi cho quý vị để tìm giờ mới.</p>
-        <form class="demo-form" data-demo-form data-ok="Xin cảm ơn. Chúng tôi sẽ gọi cho quý vị trong giờ làm việc của phòng khám để tìm giờ mới." novalidate>
-          <label>Họ và tên<input name="name" autocomplete="name" required></label>
-          <label>Điện thoại<input name="phone" type="tel" autocomplete="tel" required></label>
-          <label>Phòng khám
-            <select name="clinic">
-              {%- for l in c.locations %}
-              <option>{{ l.name }}</option>
-              {%- endfor %}
-            </select>
-          </label>
-          <fieldset>
-            <legend>Những ngày tiện cho quý vị</legend>
-            <label class="check"><input type="checkbox" name="days" value="Monday"> Thứ Hai</label>
-            <label class="check"><input type="checkbox" name="days" value="Tuesday"> Thứ Ba</label>
-            <label class="check"><input type="checkbox" name="days" value="Wednesday"> Thứ Tư</label>
-            <label class="check"><input type="checkbox" name="days" value="Thursday"> Thứ Năm</label>
-          </fieldset>
-          <p class="form-note">Xin đừng ghi thông tin y tế ở đây. Cần hủy hẹn hôm nay? Xin gọi cho phòng khám của quý vị.</p>
-          <button class="btn btn-primary" type="submit">Gửi yêu cầu</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-        {% include demo.html title="Reschedule requests" does="Requests land in one shared inbox or task list for the front desk, so nothing gets lost between phone calls." needs="A secure form tool with a signed BAA that sends to the front desk. Even a name and phone from a current patient count as patient information." anchor="callback" %}
+        <h3>Cần đổi giờ hẹn?</h3>
+        <p>Xin gọi cho phòng khám, chúng tôi sẽ cùng quý vị tìm giờ khác.</p>
+        {%- for l in c.locations %}
+        <p><a href="tel:{{ l.phone_tel }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> {{ l.name }}: {{ l.phone }}</a></p>
+        {%- endfor %}
       </div>
       <div class="card">
-        <h3>Bài tập tại nhà của quý vị</h3>
-        <p>Xem các bài tập chuyên viên vật lý trị liệu đã giao cho quý vị, có hình ảnh và video.</p>
-        <form class="demo-form" data-demo-form data-ok="Chương trình bài tập của quý vị sẽ mở ở đây." novalidate>
-          <label>Email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Mã truy cập do chuyên viên vật lý trị liệu cung cấp<input name="code" autocomplete="off" required></label>
-          <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg>Mở bài tập của tôi</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-        {% include demo.html title="Home exercise program" does="Patients log in to see their own exercises with videos, and therapists update them after each visit." needs="A home exercise program service the clinic signs up for, with a BAA. This box would link to its patient login." anchor="home-exercise" %}
+        <h3>Theo dõi tiến triển</h3>
+        <p>Ghi lại mức đau và những việc quý vị làm được sau mỗi buổi khám. Miễn phí và riêng tư: dữ liệu chỉ lưu trên điện thoại của quý vị.</p>
+        <a class="text-link" href="{{ '/vi/my-progress/' | relative_url }}">{{ site.data.progress.vi.footer_link }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="card">
-        <h3>Thanh toán hóa đơn</h3>
-        <p>Thanh toán số tiền còn nợ trực tuyến bằng số ghi trên bản kê hóa đơn của quý vị.</p>
-        <form class="demo-form" data-demo-form data-ok="Hóa đơn và trang thanh toán bảo mật của quý vị sẽ mở ở đây." novalidate>
-          <label>Số bản kê hóa đơn<input name="statement" autocomplete="off" required></label>
-          <label>Họ<input name="last" autocomplete="family-name" required></label>
-          <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-dollar"/></svg>Tìm hóa đơn của tôi</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-        <p class="form-note">Có thắc mắc về hóa đơn? Xin gọi cho phòng khám đã điều trị cho quý vị.</p>
-        {% include demo.html title="Online bill pay" does="Patients pay a statement online any time, which can cut down on billing calls and mailed checks." needs="The clinic's billing or payment provider's secure payment page. Card details are only ever entered on the provider's page, never on this site." anchor="payments" %}
+        <h3>Thắc mắc về hóa đơn?</h3>
+        <p>Xin gọi cho phòng khám đã điều trị cho quý vị. Chúng tôi sẵn lòng giải thích.</p>
+        {%- for l in c.locations %}
+        <p><a href="tel:{{ l.phone_tel }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> {{ l.name }}: {{ l.phone }}</a></p>
+        {%- endfor %}
       </div>
     </div>
   </div>

@@ -13,7 +13,7 @@ nav:
   - [Bảo hiểm, /vi/insurance/]
   - [Địa điểm, /vi/locations/]
   - [Giới thiệu, /about/]
-book_online: Đặt hẹn trực tuyến
+book_online: "Đặt lịch hẹn"
 book: Đặt hẹn
 for_physicians: Dành cho bác sĩ
 quick_actions: Thao tác nhanh
@@ -32,6 +32,23 @@ hours_short: Thứ Hai đến Thứ Năm, 8 giờ sáng đến 7 giờ tối
 hours_closed: Thứ Sáu đến Chủ Nhật, nghỉ
 week_days: [T2, T3, T4, T5, T6, T7, CN]
 hours_time: "8 giờ sáng – 7 giờ tối"
+# Call-first booking
+call_either: "Gọi một trong hai phòng khám"
+book_ready_h: "Xin chuẩn bị sẵn khi gọi"
+book_ready:
+  - "Thẻ bảo hiểm của quý vị"
+  - "Giấy giới thiệu hoặc toa của bác sĩ, nếu có"
+  - "Những ngày và giờ thuận tiện cho quý vị"
+book_next_h: "Các bước tiếp theo"
+book_next:
+  - ["Chúng tôi kiểm tra bảo hiểm", "Chúng tôi kiểm tra quyền lợi bảo hiểm và xem chương trình của quý vị có cần giấy giới thiệu hoặc giấy phép trước không. Nếu cần, chúng tôi sẽ hướng dẫn quý vị."]
+  - ["Lần khám đầu tiên", "Chuyên viên vật lý trị liệu lắng nghe, xem cách quý vị cử động và cùng quý vị bàn kế hoạch điều trị. Xin mang theo giấy tờ tùy thân có hình, thẻ bảo hiểm và mẫu đơn bệnh nhân mới."]
+  - ["Các lần khám tiếp theo", "Trước khi về, nhân viên tiếp tân sẽ giúp quý vị đặt các lần hẹn tiếp theo. Cần đổi hẹn? Xin cứ gọi cho chúng tôi."]
+book_closed_h: "Gọi ngoài giờ làm việc?"
+book_closed: "Hãy để lại yêu cầu, chúng tôi sẽ gọi lại cho quý vị khi phòng khám mở cửa."
+book_callback_link: "Yêu cầu gọi lại"
+book_forms_link: "Mẫu đơn bệnh nhân mới"
+emergency_911: "Trong trường hợp cấp cứu, xin gọi 911."
 hours_text: Thứ Hai đến Thứ Năm, 8 giờ sáng đến 7 giờ tối. Thứ Sáu đến Chủ Nhật, nghỉ. Chỉ khám theo lịch hẹn.
 language: Ngôn ngữ
 breadcrumb: Đường dẫn trang
@@ -54,7 +71,7 @@ reviews_note: Do bệnh nhân của chúng tôi chia sẻ. Quá trình hồi ph�
 leave_review: Viết đánh giá cho chúng tôi
 # CTA band
 cta_heading: Quý vị đã sẵn sàng để thấy khỏe hơn chưa?
-cta_text: Đặt hẹn lần khám đầu tiên trực tuyến trong khoảng một phút, hoặc gọi cho phòng khám gần quý vị nhất.
+cta_text: "Gọi cho phòng khám gần quý vị nhất. Chúng tôi sẽ tìm giờ thuận tiện và kiểm tra bảo hiểm cho quý vị."
 # Insurance list
 ins_search_label: Tìm chương trình bảo hiểm của quý vị
 ins_search_placeholder: Nhập tên chương trình bảo hiểm, ví dụ Aetna hoặc Medicare

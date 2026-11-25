@@ -63,20 +63,4 @@ breadcrumbs:
   </div>
 </section>
 
-<section class="section" id="nearest">
-  <div class="wrap split split-top">
-    <div>
-      <h2>Tìm phòng khám gần quý vị nhất</h2>
-      <p class="lead">Nhập mã ZIP của quý vị, chúng tôi sẽ cho biết phòng khám nào gần hơn và lái xe mất khoảng bao lâu.</p>
-      {% include demo.html title="Nearest-clinic finder" does="Patients type a ZIP code and see which clinic is closer, with a one-tap link to directions. It could also suggest the clinic in the booking form." needs="A small list of local ZIP codes and their distance to each clinic, built into the site. No outside service or tracking needed." anchor="google-profile" %}
-    </div>
-    <form class="demo-form panel" data-demo-form data-ok="Phòng khám gần hơn và cách chỉ đường sẽ hiện ở đây." novalidate>
-      <label>Mã ZIP của quý vị<input name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required></label>
-      <p class="form-note">Chỉ cần mã ZIP của quý vị. Xin đừng ghi thông tin y tế.</p>
-      <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>Tìm phòng khám của tôi</button>
-      <p class="form-msg" role="status"></p>
-    </form>
-  </div>
-</section>
-
-{% include cta.html heading="Chọn phòng khám và đặt hẹn lần khám đầu tiên" text="Đặt hẹn trực tuyến trong khoảng một phút, hoặc gọi cho phòng khám gần quý vị nhất. Chúng tôi sẽ kiểm tra bảo hiểm và xem quý vị có cần giấy giới thiệu không." %}
+{% include cta.html heading="Chọn phòng khám và đặt hẹn lần khám đầu tiên" text="Gọi cho phòng khám gần quý vị nhất. Chúng tôi sẽ kiểm tra bảo hiểm và xem quý vị có cần giấy giới thiệu không." %}

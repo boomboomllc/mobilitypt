@@ -63,20 +63,4 @@ breadcrumbs:
   </div>
 </section>
 
-<section class="section" id="nearest">
-  <div class="wrap split split-top">
-    <div>
-      <h2>Encuentre la clínica más cercana</h2>
-      <p class="lead">Escriba su código postal y le mostraremos qué clínica le queda más cerca y más o menos cuánto tarda en llegar en auto.</p>
-      {% include demo.html title="Nearest-clinic finder" does="Patients type a ZIP code and see which clinic is closer, with a one-tap link to directions. It could also suggest the clinic in the booking form." needs="A small list of local ZIP codes and their distance to each clinic, built into the site. No outside service or tracking needed." anchor="google-profile" %}
-    </div>
-    <form class="demo-form panel" data-demo-form data-ok="Aquí aparecerían la clínica más cercana y cómo llegar." novalidate>
-      <label>Su código postal<input name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required></label>
-      <p class="form-note">Solo necesitamos su código postal. Por favor, no incluya información médica.</p>
-      <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>Buscar mi clínica</button>
-      <p class="form-msg" role="status"></p>
-    </form>
-  </div>
-</section>
-
-{% include cta.html heading="Elija una clínica y haga su primera cita" text="Haga su cita en línea en más o menos un minuto, o llame a la clínica más cercana. Revisaremos su seguro y si necesita una referencia." %}
+{% include cta.html heading="Elija una clínica y haga su primera cita" text="Llame a la clínica más cercana. Revisaremos su seguro y si necesita una referencia." %}

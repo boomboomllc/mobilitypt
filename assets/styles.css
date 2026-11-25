@@ -1016,3 +1016,12 @@ button.bm-dot { border: 0; background: none; padding: 0; cursor: pointer; }
 .pg-goal label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; }
 .pg-goal input { width: 100%; }
 @media (max-width: 600px) { .pg-ax { font-size: 20px; } .pg-pain, .pg-func { stroke-width: 5; } }
+
+/* Call buttons where a form used to be */
+.call-panel h3 { margin-top: 0; }
+.call-btns { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 16px; }
+.call-btns { flex-direction: column; }
+.call-btns .btn { width: 100%; justify-content: flex-start; }
+.call-num { font-weight: 500; opacity: .85; margin-left: auto; padding-left: 12px; white-space: nowrap; }
+.call-hours { margin: 0; color: var(--muted); }
+.person .headshot { width: 100%; aspect-ratio: 1; object-fit: cover; margin-bottom: 18px; border-radius: 14px; }

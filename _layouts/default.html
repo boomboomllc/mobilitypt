@@ -46,7 +46,7 @@
 
 {%- if site.draft %}
 <div class="draft-banner">
-  <div class="wrap">Draft for {{ c.name }}, not the live site. <span class="ph-tag">Placeholder</span> = needs real content. <span class="demo-tag">Demo</span> = not connected yet. <a href="{{ '/whats-possible/' | relative_url }}">What the demos could do</a>{% if lang != "en" %} <strong>Machine translation: a bilingual staff member should check this page before launch.</strong>{% endif %}</div>
+  <div class="wrap">Draft for {{ c.name }}, not the live site. <span class="ph-tag">Placeholder</span> = needs real content. <a href="{{ '/whats-possible/' | relative_url }}">Ideas for later</a>{% if lang != "en" %} <strong>Machine translation: a bilingual staff member should check this page before launch.</strong>{% endif %}</div>
 </div>
 {%- endif %}
 
@@ -118,7 +118,7 @@
       <a href="{{ '/privacy/' | relative_url }}">{{ t.privacy }}</a>
       <a href="{{ '/accessibility/' | relative_url }}">{{ t.accessibility }}</a>
       <a href="{{ '/physicians/' | relative_url }}">{{ t.for_physicians }}</a>
-      {%- if site.draft %}<a href="{{ '/whats-possible/' | relative_url }}">What this site could do</a>{% endif %}
+      {%- if site.draft %}<a href="{{ '/whats-possible/' | relative_url }}">Ideas for later</a>{% endif %}
     </span>
   </div>
 </footer>

@@ -25,44 +25,19 @@ breadcrumbs:
         <h3>{{ l.name }} clinic</h3>
         <p>{{ l.street }}, {{ l.city }}</p>
         <div class="loc-actions">
-          <button class="btn btn-primary" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>Review {{ l.name }} on Google</button>
+          <a class="btn btn-primary" href="{{ l.google }}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>Review {{ l.name }} on Google<span class="sr-only"> (opens in a new tab)</span></a>
           <a class="btn btn-secondary" href="{{ yelp }}" target="_blank" rel="noopener">Review {{ l.name }} on Yelp</a>
         </div>
-        {%- if site.draft %}
-        <p class="small"><span class="ph-tag">Placeholder</span> Google review link from the {{ l.name }} clinic's Google Business Profile.</p>
-        {%- endif %}
       </article>
       {%- endfor %}
     </div>
-    {% include demo.html title="Fair review requests" does="Every patient sees both Google and Yelp, with no screening question first. We never send only happy patients to public review sites. This follows Google's review policy, which bans that kind of review gating, and the FTC's rules and guidance on consumer reviews." needs="The Google review link for each clinic, from its Google Business Profile." anchor="reviews" %}
   </div>
 </section>
 
 <section class="section section-alt" id="private-feedback">
-  <div class="wrap split split-top">
-    <div>
-      <h2>Send us private feedback</h2>
-      <p class="lead">Something we could do better? Tell us directly. It goes to the clinic team, not a public site.</p>
-      <p>You are still welcome to post a public review too. Private feedback is never a replacement for that.</p>
-      {% include demo.html title="Review requests after your last visit" does="After discharge, patients could get one short text or email thanking them and linking to this page, where they choose a public review or private feedback. Private notes would go straight to the clinic team so problems get fixed fast." needs="A HIPAA-covered texting or email tool with a signed BAA, and the clinic's Google review links." anchor="reviews" %}
-    </div>
-    <div class="panel">
-      <form class="demo-form" data-demo-form data-ok="Thank you. Your feedback goes straight to our clinic team." novalidate>
-        <label>Your name (optional)<input name="name" autocomplete="name"></label>
-        <fieldset>
-          <legend>Which clinic?</legend>
-          <div class="choice-row">
-            {%- for l in c.locations %}
-            <label class="choice"><input type="radio" name="clinic" value="{{ l.name }}"{% if forloop.first %} checked{% endif %}>{{ l.name }}</label>
-            {%- endfor %}
-          </div>
-        </fieldset>
-        <label>Your feedback<textarea name="message" required></textarea></label>
-        <p class="form-note">Please don't include medical details here. For questions about your care, call the clinic.</p>
-        <button class="btn btn-primary btn-lg" type="submit">Send feedback</button>
-        <p class="form-msg" role="status"></p>
-      </form>
-    </div>
+  <div class="wrap prose">
+    <h2>Something we could do better?</h2>
+    <p>Tell us directly. Call your clinic or email <a href="mailto:{{ c.email }}">{{ c.email }}</a>, and we'll make it right. Please don't email medical details.</p>
   </div>
 </section>
 

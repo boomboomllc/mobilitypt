@@ -63,20 +63,4 @@ breadcrumbs:
   </div>
 </section>
 
-<section class="section" id="nearest">
-  <div class="wrap split split-top">
-    <div>
-      <h2>가장 가까운 클리닉 찾기</h2>
-      <p class="lead">우편번호(ZIP 코드)를 입력하시면 어느 클리닉이 더 가까운지, 운전해서 대략 얼마나 걸리는지 알려 드립니다.</p>
-      {% include demo.html title="Nearest-clinic finder" does="Patients type a ZIP code and see which clinic is closer, with a one-tap link to directions. It could also suggest the clinic in the booking form." needs="A small list of local ZIP codes and their distance to each clinic, built into the site. No outside service or tracking needed." anchor="google-profile" %}
-    </div>
-    <form class="demo-form panel" data-demo-form data-ok="더 가까운 클리닉과 길 찾기가 여기에 표시됩니다." novalidate>
-      <label>우편번호(ZIP 코드)<input name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required></label>
-      <p class="form-note">우편번호만 있으면 됩니다. 의료 정보는 적지 마세요.</p>
-      <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>내 클리닉 찾기</button>
-      <p class="form-msg" role="status"></p>
-    </form>
-  </div>
-</section>
-
-{% include cta.html heading="클리닉을 고르고 첫 방문을 예약하세요" text="약 1분이면 온라인으로 예약하실 수 있습니다. 가까운 클리닉에 전화하셔도 됩니다. 보험과 의뢰서 필요 여부를 확인해 드립니다." %}
+{% include cta.html heading="클리닉을 고르고 첫 방문을 예약하세요" text="가까운 클리닉에 전화하세요. 보험과 의뢰서 필요 여부를 확인해 드립니다." %}

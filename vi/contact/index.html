@@ -36,7 +36,6 @@ schema_all_locations: true
       <h2>Yêu cầu chúng tôi gọi lại</h2>
       <p class="lead">Xin để lại tên và số điện thoại, chúng tôi sẽ gọi cho quý vị trong giờ làm việc của phòng khám.</p>
       <p>Phù hợp cho các câu hỏi về bảo hiểm, giấy giới thiệu, lịch hẹn hoặc những gì sẽ diễn ra khi đến khám.</p>
-      {% include demo.html title="Call-back requests" does="Requests land in the clinic's inbox or front desk screen, so nobody has to wait on hold. Only a name, phone and preferred clinic are collected." needs="A secure form service that signs a HIPAA business associate agreement (BAA), and a front desk routine to call back the same day the clinic is open." anchor="callback" %}
     </div>
     <div class="panel">
       {% include callback-form.html %}
@@ -72,30 +71,6 @@ schema_all_locations: true
       </table>
       <p class="muted">Cả hai phòng khám có cùng giờ làm việc. Chỉ khám theo lịch hẹn.</p>
       <p>Theo dõi chúng tôi: <a href="{{ c.social.facebook }}" target="_blank" rel="noopener">Facebook</a> &middot; <a href="{{ c.social.instagram }}" target="_blank" rel="noopener">Instagram</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="chat">
-  <div class="wrap split split-top">
-    <div>
-      <h2>Có câu hỏi? Xin hỏi chúng tôi</h2>
-      <p class="lead">Trả lời nhanh các câu hỏi thường gặp, bất cứ lúc nào trong ngày.</p>
-      {% include demo.html title="Questions assistant" does="A small chat box that answers general questions using only what's on this website: hours, locations, insurance, referrals and forms. It never asks for health details and hands anything else to the front desk." needs="A chat tool limited to the site's own pages, with a clear notice not to share medical information, reviewed by the clinic before it goes live." anchor="chat" %}
-    </div>
-    <div class="panel" aria-label="Ví dụ trò chuyện (demo)" role="group">
-      <div class="chat">
-        <p class="chat-msg chat-user"><strong>Quý vị:</strong> Phòng khám có mở cửa vào Thứ Sáu không?</p>
-        <p class="chat-msg chat-bot"><strong>Trợ lý:</strong> Cả hai phòng khám mở cửa {{ t.hours_short }}, và nghỉ từ Thứ Sáu đến Chủ Nhật. Quý vị vẫn có thể <a href="{{ '/vi/book/' | relative_url }}">đặt hẹn trực tuyến</a> bất cứ lúc nào.</p>
-        <p class="chat-msg chat-user"><strong>Quý vị:</strong> Phòng khám có nhận Medicare không?</p>
-        <p class="chat-msg chat-bot"><strong>Trợ lý:</strong> Có, chúng tôi nhận {{ c.insurance[0] }}. <a href="{{ '/vi/insurance/' | relative_url }}">Xem tất cả các chương trình chúng tôi nhận</a>, hoặc xin gọi để chúng tôi kiểm tra chương trình của quý vị.</p>
-      </div>
-      <form class="demo-form" data-demo-form data-ok="Cảm ơn quý vị đã đặt câu hỏi." novalidate>
-        <label>Câu hỏi của quý vị<input name="question" required placeholder="Hỏi về giờ làm việc, bảo hiểm hoặc địa điểm"></label>
-        <p class="form-note">Chỉ dành cho câu hỏi chung. Xin đừng chia sẻ thông tin y tế.</p>
-        <button class="btn btn-primary" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>Hỏi</button>
-        <p class="form-msg" role="status"></p>
-      </form>
     </div>
   </div>
 </section>
