@@ -25,7 +25,7 @@ schema_all_locations: true
         <img src="{{ c.photos.hero }}" alt="{{ c.photos.hero_alt }}">
         <div class="hero-badge">
           <span class="status" data-status></span>
-          <span>{{ c.hours_short }}</span>
+          {% include hours-week.html %}
         </div>
       </figure>
     </div>
@@ -68,7 +68,7 @@ schema_all_locations: true
     <h2 class="fast-h">Our two locations</h2>
     <div class="locations locations-compact">
       {%- for l in c.locations %}
-      {% include location-card.html key=l.key %}
+      {% include location-card.html key=l.key compact=true %}
       {%- endfor %}
     </div>
   </div>

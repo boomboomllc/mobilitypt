@@ -1,17 +1,24 @@
-{%- comment -%}Language links. Goes to the same page in that language when it exists (pages share a "ref"), else that language's home page.{%- endcomment -%}
+{%- comment -%}Language menu. Goes to the same page in that language when it exists (pages share a "ref"), else that language's home page.
+Default: a dropdown (top bar). list=true: a plain row of links (phone menu).{%- endcomment -%}
 {%- assign cur = page.lang | default: "en" -%}{%- assign tl = site.data.i18n[cur] -%}
-<span class="lang-switch" role="group" aria-label="{{ tl.language }}">
+{%- capture links -%}
   {%- for pair in site.data.i18n -%}
   {%- assign code = pair[0] -%}{%- assign L = pair[1] -%}
   {%- assign target = nil -%}
   {%- if page.ref -%}
     {%- for p in site.pages -%}{%- assign plang = p.lang | default: "en" -%}{%- if p.ref == page.ref and plang == code -%}{%- assign target = p.url -%}{%- endif -%}{%- endfor -%}
   {%- endif -%}
-  {%- if target == nil -%}{%- assign target = L.prefix | append: "/" -%}{%- endif -%}
-  {%- if code == cur %}
-  <span aria-current="true" lang="{{ L.html_lang }}">{{ L.lang_name }}</span>
-  {%- else %}
-  <a href="{{ target | relative_url }}" lang="{{ L.html_lang }}" hreflang="{{ L.html_lang }}">{{ L.lang_name }}</a>
-  {%- endif -%}
-  {%- endfor %}
-</span>
+  {%- if target == nil -%}{%- assign target = L.prefix | append: "/" -%}{%- endif %}
+  <li><a href="{{ target | relative_url }}" lang="{{ L.html_lang }}" hreflang="{{ L.html_lang }}"{% if code == cur %} aria-current="true"{% endif %}>{{ L.lang_name }}</a></li>
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if include.list %}
+<ul class="lang-list" aria-label="{{ tl.language }}">{{ links }}
+</ul>
+{%- else %}
+<details class="lang-menu">
+  <summary aria-label="{{ tl.language }}: {{ tl.lang_name }}"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span>{{ tl.lang_name }}</span><svg class="icon lang-caret" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <ul>{{ links }}
+  </ul>
+</details>
+{%- endif %}

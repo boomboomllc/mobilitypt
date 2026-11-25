@@ -30,6 +30,8 @@ privacy: Privacy and HIPAA notice
 accessibility: Accessibility
 hours_short: Mon to Thu, 8 am to 7 pm
 hours_closed: Fri to Sun, closed
+week_days: [Mo, Tu, We, Th, Fr, Sa, Su]
+hours_time: "8 am – 7 pm"
 hours_text: Monday to Thursday, 8 am to 7 pm. Friday to Sunday, closed. By appointment.
 language: Language
 breadcrumb: Breadcrumb

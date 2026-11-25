@@ -27,7 +27,7 @@ schema_all_locations: true
         <img src="{{ c.photos.hero }}" alt="Bàn trị liệu cạnh những khung cửa sổ lớn tại phòng khám Lake Forest">
         <div class="hero-badge">
           <span class="status" data-status></span>
-          <span>{{ t.hours_short }}</span>
+          {% include hours-week.html %}
         </div>
       </figure>
     </div>
@@ -70,7 +70,7 @@ schema_all_locations: true
     <h2 class="fast-h">Hai địa điểm của chúng tôi</h2>
     <div class="locations locations-compact">
       {%- for l in c.locations %}
-      {% include location-card.html key=l.key %}
+      {% include location-card.html key=l.key compact=true %}
       {%- endfor %}
     </div>
   </div>

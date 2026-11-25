@@ -58,9 +58,6 @@
     {%- include lang-switch.html %}
     <div class="top-social">
       <a href="{{ '/physicians/' | relative_url }}">{{ t.for_physicians }}</a>
-      <a href="{{ c.social.facebook }}" target="_blank" rel="noopener">Facebook<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
-      <a href="{{ c.social.instagram }}" target="_blank" rel="noopener">Instagram<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
-      <a href="{{ c.social.yelp_tustin }}" target="_blank" rel="noopener">Yelp<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
     </div>
   </div>
 </div>
@@ -73,6 +70,7 @@
         <a href="{{ item[1] | relative_url }}"{% if page.url contains item[1] or page.location and item[1] contains "/locations/" %} aria-current="page"{% endif %}>{{ item[0] }}</a>
       {%- endfor %}
       <a class="btn btn-primary nav-cta" href="{{ t.prefix | append: '/book/' | relative_url }}">{{ t.book_online }}</a>
+      {%- include lang-switch.html list=true %}
     </nav>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="{{ t.menu_open }}"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
   </div>
@@ -88,6 +86,11 @@
       <img class="footer-logo" src="{{ c.logo }}" alt="{{ c.name }}" width="160" height="82" loading="lazy">
       <p class="muted">{% if lang == "en" %}{{ c.tagline }} {% endif %}{{ t.footer_serving }} {{ c.founded }}{{ t.footer_serving_after }}.</p>
       <p><a href="mailto:{{ c.email }}">{{ c.email }}</a></p>
+      <p class="footer-social">
+        <a href="{{ c.social.facebook }}" target="_blank" rel="noopener">Facebook<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
+        <a href="{{ c.social.instagram }}" target="_blank" rel="noopener">Instagram<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
+        <a href="{{ c.social.yelp_tustin }}" target="_blank" rel="noopener">Yelp<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
+      </p>
     </div>
     {%- for l in c.locations %}
     <div>

@@ -30,6 +30,8 @@ privacy: Aviso de privacidad y HIPAA
 accessibility: Accesibilidad
 hours_short: Lun. a jue., 8 a.m. a 7 p.m.
 hours_closed: Vie. a dom., cerrado
+week_days: [Lu, Ma, Mi, Ju, Vi, Sá, Do]
+hours_time: "8 a.m. – 7 p.m."
 hours_text: Lunes a jueves, de 8 a.m. a 7 p.m. Viernes a domingo, cerrado. Solo con cita.
 language: Idioma
 breadcrumb: Ruta de navegación

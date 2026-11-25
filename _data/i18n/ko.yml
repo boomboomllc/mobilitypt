@@ -31,6 +31,8 @@ privacy: 개인정보 및 HIPAA 고지
 accessibility: 접근성
 hours_short: 월~목, 오전 8시~오후 7시
 hours_closed: 금~일, 휴무
+week_days: [월, 화, 수, 목, 금, 토, 일]
+hours_time: "오전 8시 – 오후 7시"
 hours_text: 월요일~목요일, 오전 8시~오후 7시. 금요일~일요일, 휴무. 예약제로 운영합니다.
 language: 언어
 breadcrumb: 현재 위치

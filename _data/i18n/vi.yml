@@ -30,6 +30,8 @@ privacy: Thông báo về quyền riêng tư và HIPAA
 accessibility: Hỗ trợ tiếp cận
 hours_short: Thứ Hai đến Thứ Năm, 8 giờ sáng đến 7 giờ tối
 hours_closed: Thứ Sáu đến Chủ Nhật, nghỉ
+week_days: [T2, T3, T4, T5, T6, T7, CN]
+hours_time: "8 giờ sáng – 7 giờ tối"
 hours_text: Thứ Hai đến Thứ Năm, 8 giờ sáng đến 7 giờ tối. Thứ Sáu đến Chủ Nhật, nghỉ. Chỉ khám theo lịch hẹn.
 language: Ngôn ngữ
 breadcrumb: Đường dẫn trang

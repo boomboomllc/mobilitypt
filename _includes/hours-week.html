@@ -1,0 +1,3 @@
+{%- comment -%}Opening hours as a row of days (open days filled) plus the time. Days open: open_days in clinic.yml (1 = Monday).{%- endcomment -%}
+{%- assign lang = page.lang | default: "en" -%}{%- assign t = site.data.i18n[lang] -%}{%- assign c = site.data.clinic -%}
+<span class="hours-week"><span class="week" aria-hidden="true">{% for d in t.week_days %}<span class="day{% if c.open_days contains forloop.index %} on{% endif %}">{{ d }}</span>{% endfor %}</span><span class="week-time" aria-hidden="true">{{ t.hours_time }}</span><span class="sr-only">{{ t.hours_short }}. {{ t.hours_closed }}.</span></span>

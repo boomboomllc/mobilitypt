@@ -1,4 +1,4 @@
-{%- comment -%}One clinic card. Param: key (tustin | lake-forest). Optional: link=false to hide the "Clinic details" link.{%- endcomment -%}
+{%- comment -%}One clinic card. Param: key (tustin | lake-forest). Optional: link=false to hide the "Clinic details" link; compact=true (homepage) leaves out fax and hours, which the hero already shows.{%- endcomment -%}
 {%- assign lang = page.lang | default: "en" -%}{%- assign t = site.data.i18n[lang] -%}
 {%- assign c = site.data.clinic -%}
 {%- assign l = c.locations | where: "key", include.key | first -%}
@@ -9,8 +9,10 @@
     <p>{{ l.street }}<br>{{ l.city }}, {{ l.state }} {{ l.zip }}</p>
     <dl class="loc-facts">
       <dt>{{ t.phone }}</dt><dd><a href="tel:{{ l.phone_tel }}">{{ l.phone }}</a></dd>
+      {%- unless include.compact %}
       <dt>{{ t.fax }}</dt><dd>{{ l.fax }}</dd>
-      <dt>{{ t.hours }}</dt><dd>{{ t.hours_short }}<br>{{ t.hours_closed }}</dd>
+      <dt>{{ t.hours }}</dt><dd>{% include hours-week.html %}</dd>
+      {%- endunless %}
     </dl>
     <div class="loc-actions">
       <a class="btn btn-primary" href="tel:{{ l.phone_tel }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{ t.call }} {{ l.name }}{{ t.call_after }}</a>

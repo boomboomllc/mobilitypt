@@ -20,6 +20,7 @@ logo: https://mobilitypt.net/wp-content/uploads/2019/05/cropped-Mobility_Physica
 hours_text: Monday to Thursday, 8 am to 7 pm. Friday to Sunday, closed. By appointment.
 hours_short: Mon to Thu, 8 am to 7 pm
 hours_closed: Fri to Sun, closed
+open_days: [1, 2, 3, 4]  # 1 = Monday. Also update OPEN_DAYS in assets/script.js
 
 locations:
   - key: tustin

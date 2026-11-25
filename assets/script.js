@@ -613,3 +613,11 @@ if (pgBox) {
   render();
   prefill();
 }
+
+// Language menu: close on a click elsewhere or on Escape
+document.querySelectorAll('.lang-menu').forEach((menu) => {
+  document.addEventListener('click', (e) => { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  menu.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+  });
+});
