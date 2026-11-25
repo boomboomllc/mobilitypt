@@ -46,7 +46,7 @@
 
 {%- if site.draft %}
 <div class="draft-banner">
-  <div class="wrap">Design draft for {{ c.name }}. Not the live site. <span class="ph-tag">Placeholder</span> = real content needed. <span class="demo-tag">Demo</span> = a feature shown but not connected yet. <a href="{{ '/whats-possible/' | relative_url }}">See what each demo could do</a>.{% if lang != "en" %} <strong>Machine translation: a bilingual staff member should check this page before launch.</strong>{% endif %}</div>
+  <div class="wrap">Draft for {{ c.name }}, not the live site. <span class="ph-tag">Placeholder</span> = needs real content. <span class="demo-tag">Demo</span> = not connected yet. <a href="{{ '/whats-possible/' | relative_url }}">What the demos could do</a>{% if lang != "en" %} <strong>Machine translation: a bilingual staff member should check this page before launch.</strong>{% endif %}</div>
 </div>
 {%- endif %}
 

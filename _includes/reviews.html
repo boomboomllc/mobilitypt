@@ -16,12 +16,12 @@
       </figure>
       {%- endfor %}
     </div>
-    <p class="center muted small">{{ t.reviews_note }}</p>
     <div class="reviews-foot">
-      {%- if site.draft %}
-      <p><span class="ph-tag">Placeholder</span> <span class="reviews-note">Add each clinic's Google star rating and review count here.</span></p>
-      {%- endif %}
+      <p class="muted small">{{ t.reviews_note }}</p>
       <a class="btn btn-secondary" href="{{ '/reviews/' | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>{{ t.leave_review }}</a>
     </div>
+    {%- if site.draft %}
+    <p class="reviews-ph"><span class="ph-tag">Placeholder</span> <span class="reviews-note">Add each clinic's Google star rating and review count here.</span></p>
+    {%- endif %}
   </div>
 </section>

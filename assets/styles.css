@@ -282,7 +282,8 @@ img { max-width: 100%; display: block; }
 .review:first-child figcaption { color: #fff; border-color: rgba(255,255,255,.14); }
 .review:first-child figcaption::before { background: linear-gradient(135deg, #2c3d7a, #4c6fff); }
 .reviews-note { color: var(--muted); font-size: 15px; }
-.reviews-foot { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.reviews-foot { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px 24px; }
+.reviews-ph { text-align: center; margin: 16px 0 0; }
 .reviews-foot p { margin: 0; }
 
 /* Steps */
@@ -398,6 +399,7 @@ label.check input { width: 18px; height: 18px; accent-color: var(--navy); margin
 .loc-facts dt { color: var(--muted); }
 .loc-facts dd { margin: 0; font-weight: 500; }
 .loc-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.loc-actions .text-link { flex-basis: 100%; margin-top: 4px; }
 .photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
 .photo-strip img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); }
 .section-dark .loc-facts dt { color: #8f9bc4; }
@@ -406,7 +408,7 @@ label.check input { width: 18px; height: 18px; accent-color: var(--navy); margin
 
 /* Footer */
 .site-footer { background: #070e22; border-top: 1px solid rgba(255, 255, 255, .08); color: #a9b3d4; padding: 80px 0 32px; font-size: 15.5px; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+.footer-grid { display: grid; grid-template-columns: 1.2fr 1.1fr 1.1fr 1fr; gap: 40px; margin-bottom: 48px; }
 .footer-logo { height: 56px; width: auto; margin-bottom: 18px; background: #fff; padding: 8px 12px; border-radius: 12px; box-sizing: content-box; }
 .footer-h { font-weight: 600; color: #fff; margin-bottom: 10px; }
 .footer-h a { color: #fff; }
@@ -740,8 +742,8 @@ progress::-moz-progress-bar { background: var(--navy); }
   transition: transform .15s, border-color .15s, box-shadow .15s;
 }
 .tile:hover { transform: translateY(-3px); border-color: var(--navy); color: var(--muted); }
-.tile .icon { width: 24px; height: 24px; padding: 10px; box-sizing: content-box; border-radius: 12px; background: var(--navy-soft); color: var(--navy); margin-bottom: auto; }
-.tile strong { color: var(--ink); font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; margin-top: 18px; }
+.tile .icon { width: 24px; height: 24px; padding: 10px; box-sizing: content-box; border-radius: 12px; background: var(--navy-soft); color: var(--navy); }
+.tile strong { color: var(--ink); font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; margin-top: 16px; }
 .tile-primary { background: var(--navy); border-color: var(--navy); color: #c9d3f5; }
 .tile-primary:hover { border-color: var(--navy-hover); background: var(--navy-hover); color: #c9d3f5; }
 .tile-primary strong { color: #fff; }
@@ -789,7 +791,13 @@ progress::-moz-progress-bar { background: var(--navy); }
   .tile span { font-size: 13px; }
   .section-fast { padding: 40px 0 44px; }
   .locations-compact .loc-img { display: none; }
+  .locations-compact .loc-facts { display: none; }
   .reviews { padding: 44px 0; }
+  .draft-banner { font-size: 13px; padding: 6px 0; }
+  /* Call and Directions side by side in the clinic cards */
+  .loc-body, .locations-compact .loc-body { padding: 22px 20px; }
+  .loc-actions { gap: 8px; }
+  .loc-actions .btn { flex: 1 1 auto; padding: 0 14px; font-size: 15px; }
 }
 
 /* Booking: first visit, next visit or whole plan */
