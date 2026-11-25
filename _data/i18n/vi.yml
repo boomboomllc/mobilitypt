@@ -32,6 +32,22 @@ hours_short: Thứ Hai đến Thứ Năm, 8 giờ sáng đến 7 giờ tối
 hours_closed: Thứ Sáu đến Chủ Nhật, nghỉ
 week_days: [T2, T3, T4, T5, T6, T7, CN]
 hours_time: "8 giờ sáng – 7 giờ tối"
+# Book page
+bk_intro: "Dù là bệnh nhân mới hay đang điều trị, xin chọn phòng khám và giờ thuận tiện."
+bk_new_kicker: "Bệnh nhân mới"
+bk_new_h: "Đặt lần khám đầu tiên"
+bk_new_text: "Chọn giờ trực tuyến. Chúng tôi sẽ gọi để xác nhận bảo hiểm trước khi quý vị đến."
+bk_new_text_call: "Gọi cho phòng khám. Chúng tôi sẽ tìm giờ và kiểm tra bảo hiểm cho quý vị."
+bk_ret_kicker: "Bệnh nhân đang điều trị"
+bk_ret_h: "Đặt lần khám tiếp theo"
+bk_ret_text: "Chọn giờ tại phòng khám quý vị đang điều trị."
+bk_ret_text_call: "Gọi cho phòng khám quý vị đang điều trị, chúng tôi sẽ tìm giờ cho quý vị."
+bk_pick: "Chọn phòng khám"
+bk_before_h: "Trước lần khám đầu tiên"
+bk_before:
+  - ["Mang theo", "Giấy tờ tùy thân có hình, thẻ bảo hiểm, và giấy giới thiệu của bác sĩ nếu có."]
+  - ["Điền mẫu đơn", "In mẫu đơn bệnh nhân mới và mang theo."]
+  - ["Chúng tôi kiểm tra bảo hiểm", "Chúng tôi sẽ cho quý vị biết chương trình có cần giấy giới thiệu hoặc giấy phép trước không."]
 # Call-first booking
 book_online_h: "Đặt lịch lần khám đầu tiên trực tuyến"
 book_online_text: "Chọn giờ còn trống tại phòng khám quý vị muốn. Chúng tôi sẽ gọi để xác nhận bảo hiểm trước lần khám."

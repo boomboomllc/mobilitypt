@@ -32,6 +32,22 @@ hours_short: Mon to Thu, 8 am to 7 pm
 hours_closed: Fri to Sun, closed
 week_days: [Mo, Tu, We, Th, Fr, Sa, Su]
 hours_time: "8 am – 7 pm"
+# Book page
+bk_intro: "New or returning, pick your clinic and a time that works."
+bk_new_kicker: "New patient"
+bk_new_h: "Book your first visit"
+bk_new_text: "Pick a time online. We'll call to confirm your insurance before you come in."
+bk_new_text_call: "Call your clinic. We'll find a time and check your insurance."
+bk_ret_kicker: "Returning patient"
+bk_ret_h: "Book your next visit"
+bk_ret_text: "Pick a time at the clinic you go to."
+bk_ret_text_call: "Call the clinic you go to, and we'll find a time."
+bk_pick: "Choose your clinic"
+bk_before_h: "Before your first visit"
+bk_before:
+  - ["Bring", "A photo ID, your insurance card, and your doctor's referral if you have one."]
+  - ["Fill out your form", "Print the new patient form and bring it with you."]
+  - ["We check your insurance", "We'll tell you if your plan needs a referral or authorization before you start."]
 # Call-first booking
 book_online_h: "Book your first visit online"
 book_online_text: "Pick an open time at the clinic you prefer. We'll call to confirm your insurance before your visit."

@@ -1,53 +1,75 @@
-{%- comment -%}The Book page: booking is by phone. Words live in _data/i18n (book_*).{%- endcomment -%}
+{%- comment -%}The Book page. Two choices (new or returning patient), each with one button per clinic.
+A button opens that clinic's Google booking page (booking_url / followup_url in clinic.yml). With no link it calls the clinic,
+except while site.draft, where it points to a demo note. Words live in _data/i18n (bk_*, book_*).{%- endcomment -%}
 {%- assign lang = page.lang | default: "en" -%}{%- assign t = site.data.i18n[lang] -%}{%- assign c = site.data.clinic -%}
-{%- if c.online_booking %}
-<section class="section section-sm">
-  <div class="wrap">
-    {% include book-online.html %}
-  </div>
-</section>
-{%- endif %}
+{%- assign new_online = false %}{% assign ret_online = false %}{% assign demo = false %}
+{%- for l in c.locations %}
+  {%- if c.online_booking %}{% if l.booking_url != "" and l.booking_url %}{% assign new_online = true %}{% elsif site.draft %}{% assign new_online = true %}{% assign demo = true %}{% endif %}{% endif %}
+  {%- if c.online_booking and c.online_followups %}{% if l.followup_url != "" and l.followup_url %}{% assign ret_online = true %}{% elsif site.draft %}{% assign ret_online = true %}{% assign demo = true %}{% endif %}{% endif %}
+{%- endfor %}
 
-<section class="section">
+<section class="bk">
   <div class="wrap">
-    {%- if c.online_booking %}<h2>{{ t.book_call_h }}</h2>{% endif %}
-    <div class="locations">
-      {%- for l in c.locations %}
-      {% include location-card.html key=l.key %}
+    <div class="bk-choose">
+      {%- for kind in (1..2) %}
+      {%- if kind == 1 %}{% assign online = new_online %}{% else %}{% assign online = ret_online %}{% endif %}
+      <article class="bk-card{% if kind == 1 %} bk-card-new{% endif %}">
+        <span class="bk-kicker">{% if kind == 1 %}{{ t.bk_new_kicker }}{% else %}{{ t.bk_ret_kicker }}{% endif %}</span>
+        <h2>{% if kind == 1 %}{{ t.bk_new_h }}{% else %}{{ t.bk_ret_h }}{% endif %}</h2>
+        <p>{% if kind == 1 %}{% if online %}{{ t.bk_new_text }}{% else %}{{ t.bk_new_text_call }}{% endif %}{% else %}{% if online %}{{ t.bk_ret_text }}{% else %}{{ t.bk_ret_text_call }}{% endif %}{% endif %}</p>
+        <p class="bk-pick">{{ t.bk_pick }}</p>
+        <div class="bk-btns">
+          {%- for l in c.locations %}
+          {%- if kind == 1 %}{% assign url = l.booking_url %}{% else %}{% assign url = l.followup_url %}{% endif %}
+          {%- if online and url != "" and url %}
+          <a class="btn btn-lg {% if kind == 1 %}btn-light{% else %}btn-primary{% endif %}" href="{{ url }}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>{{ l.name }}<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
+          {%- elsif online and site.draft %}
+          <a class="btn btn-lg {% if kind == 1 %}btn-light{% else %}btn-primary{% endif %}" href="#online-demo"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>{{ l.name }}</a>
+          {%- else %}
+          <a class="btn btn-lg {% if kind == 1 %}btn-light{% else %}btn-primary{% endif %}" href="tel:{{ l.phone_tel }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{ l.name }}<span class="bk-num">{{ l.phone }}</span></a>
+          {%- endif %}
+          {%- endfor %}
+        </div>
+      </article>
       {%- endfor %}
     </div>
+
+    <div class="bk-call">
+      <p class="bk-call-h"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{ t.book_call_h }}</p>
+      <p class="bk-call-nums">
+        {%- for l in c.locations %}<span>{{ l.name }} <a href="tel:{{ l.phone_tel }}">{{ l.phone }}</a></span>{% endfor %}
+      </p>
+      {% include hours-week.html %}
+    </div>
+    <div class="bk-foot">
+      <p>{{ t.book_closed_h }} <a href="{{ t.prefix | append: '/contact/#callback' | relative_url }}">{{ t.book_callback_link }}</a></p>
+      <p class="form-note">{{ t.book_contact_only }} {{ t.emergency_911 }}</p>
+    </div>
   </div>
 </section>
 
-<section class="section section-alt">
-  <div class="wrap split split-top">
-    <div>
-      <h2>{{ t.book_ready_h }}</h2>
-      <ul class="check-list">
-        {%- for r in t.book_ready %}
-        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>{{ r }}</span></li>
-        {%- endfor %}
-      </ul>
-      <p><a class="text-link" href="{{ t.prefix | append: '/new-patients-center/#forms' | relative_url }}">{{ t.book_forms_link }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-      <h3>{{ t.book_closed_h }}</h3>
-      <p>{{ t.book_closed }}</p>
-      <p><a class="text-link" href="{{ t.prefix | append: '/contact/#callback' | relative_url }}">{{ t.book_callback_link }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-      <p class="muted small">{{ t.emergency_911 }}</p>
-    </div>
-    <div>
-      <h2>{{ t.book_next_h }}</h2>
-      <div class="split-points">
-        {%- assign icons = "shield,clipboard,calendar" | split: "," %}
-        {%- for n in t.book_next %}
-        <div class="point">
-          <span class="point-icon"><svg class="icon" aria-hidden="true"><use href="#i-{{ icons[forloop.index0] }}"/></svg></span>
-          <div>
-            <h3>{{ n[0] }}</h3>
-            <p>{{ n[1] }}</p>
-          </div>
-        </div>
-        {%- endfor %}
+<section class="section section-alt bk-before">
+  <div class="wrap">
+    <h2>{{ t.bk_before_h }}</h2>
+    <div class="bk-before-grid">
+      {%- assign icons = "file,clipboard,shield" | split: "," %}
+      {%- for b in t.bk_before %}
+      <div class="bk-step">
+        <span class="point-icon"><svg class="icon" aria-hidden="true"><use href="#i-{{ icons[forloop.index0] }}"/></svg></span>
+        <h3>{{ b[0] }}</h3>
+        <p>{{ b[1] }}</p>
+        {%- if forloop.index == 2 %}
+        <a class="text-link" href="{{ c.new_patient_form }}" target="_blank" rel="noopener">{{ t.book_forms_link }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only"> {{ t.opens_new_tab }}</span></a>
+        {%- endif %}
       </div>
+      {%- endfor %}
     </div>
+    {%- if demo %}
+    <aside class="demo-note" id="online-demo" aria-label="About this demo">
+      <span class="demo-tag">Demo</span>
+      <div><p><strong>Online booking.</strong> Each clinic button opens one of the clinic's own Google Calendar booking pages: one for first visits, one for follow-ups. Bookings land in the calendar already titled ("First visit" or "Follow-up"), and names and times go straight into the clinic's Google account, never through this website. Once the site is live, a clinic without a link just gets call buttons.</p>
+      <p class="demo-needs"><span>To set up:</span> paid Google Workspace with Google's HIPAA agreement (BAA) turned on, Google Calendar as the clinic's real schedule, and booking pages that ask for contact details only.</p></div>
+    </aside>
+    {%- endif %}
   </div>
 </section>

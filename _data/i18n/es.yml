@@ -32,6 +32,22 @@ hours_short: Lun. a jue., 8 a.m. a 7 p.m.
 hours_closed: Vie. a dom., cerrado
 week_days: [Lu, Ma, Mi, Ju, Vi, Sá, Do]
 hours_time: "8 a.m. – 7 p.m."
+# Book page
+bk_intro: "Paciente nuevo o actual: elija su clínica y un horario que le convenga."
+bk_new_kicker: "Paciente nuevo"
+bk_new_h: "Pida su primera cita"
+bk_new_text: "Elija un horario en línea. Le llamaremos para confirmar su seguro antes de su visita."
+bk_new_text_call: "Llame a su clínica. Buscamos un horario y revisamos su seguro."
+bk_ret_kicker: "Paciente actual"
+bk_ret_h: "Pida su próxima visita"
+bk_ret_text: "Elija un horario en la clínica a la que va."
+bk_ret_text_call: "Llame a la clínica a la que va y buscamos un horario."
+bk_pick: "Elija su clínica"
+bk_before_h: "Antes de su primera visita"
+bk_before:
+  - ["Traiga", "Una identificación con foto, su tarjeta del seguro y la orden de su médico, si la tiene."]
+  - ["Llene su formulario", "Imprima el formulario para pacientes nuevos y tráigalo."]
+  - ["Revisamos su seguro", "Le diremos si su plan necesita un referido o una autorización antes de empezar."]
 # Call-first booking
 book_online_h: "Pida su primera cita en línea"
 book_online_text: "Elija un horario disponible en la clínica que prefiera. Le llamaremos para confirmar su seguro antes de su visita."
