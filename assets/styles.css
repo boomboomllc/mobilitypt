@@ -1025,3 +1025,11 @@ button.bm-dot { border: 0; background: none; padding: 0; cursor: pointer; }
 .call-num { font-weight: 500; opacity: .85; margin-left: auto; padding-left: 12px; white-space: nowrap; }
 .call-hours { margin: 0; color: var(--muted); }
 .person .headshot { width: 100%; aspect-ratio: 1; object-fit: cover; margin-bottom: 18px; border-radius: 14px; }
+
+/* Book online (Google Calendar booking pages) */
+.book-online h2 { margin-top: 0; }
+.book-online-btns { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 12px; }
+.book-online-btns .btn { flex: 0 1 auto; }
+.book-online-compact { margin-bottom: 16px; }
+.book-online-compact .book-online-btns .btn { flex: 1 1 100%; justify-content: flex-start; }
+.book-online .demo-note { margin-top: 16px; }

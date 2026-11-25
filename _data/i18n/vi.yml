@@ -33,6 +33,11 @@ hours_closed: Thứ Sáu đến Chủ Nhật, nghỉ
 week_days: [T2, T3, T4, T5, T6, T7, CN]
 hours_time: "8 giờ sáng – 7 giờ tối"
 # Call-first booking
+book_online_h: "Đặt lịch lần khám đầu tiên trực tuyến"
+book_online_text: "Chọn giờ còn trống tại phòng khám quý vị muốn. Chúng tôi sẽ gọi để xác nhận bảo hiểm trước lần khám."
+book_online_note: "Chỉ dành cho lần khám đầu tiên. Xin chỉ ghi thông tin liên lạc, không ghi thông tin sức khỏe. Bệnh nhân đang điều trị xin gọi để đặt lần khám tiếp theo."
+book_call_h: "Muốn gọi điện?"
+book_intro: "Nhân viên tiếp tân sẽ kiểm tra bảo hiểm trước lần khám đầu tiên của quý vị."
 call_either: "Gọi một trong hai phòng khám"
 book_ready_h: "Xin chuẩn bị sẵn khi gọi"
 book_ready:

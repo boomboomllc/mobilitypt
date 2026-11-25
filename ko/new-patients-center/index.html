@@ -32,8 +32,8 @@ faq:
     <ol class="steps">
       <li>
         <span class="step-num">1</span>
-        <h3>전화로 예약하세요</h3>
-        <p>가까운 클리닉에 전화 주시면 편한 시간을 찾아 드립니다.</p>
+        <h3>{% if site.data.clinic.online_booking %}온라인 또는 전화로 예약하세요{% else %}전화로 예약하세요{% endif %}</h3>
+        <p>{% if site.data.clinic.online_booking %}온라인에서 가능한 시간을 고르시거나 가까운 클리닉에 전화하세요.{% else %}가까운 클리닉에 전화 주시면 편한 시간을 찾아 드립니다.{% endif %}</p>
       </li>
       <li>
         <span class="step-num">2</span>

@@ -1,0 +1,32 @@
+{%- comment -%}"Book online" buttons that open each clinic's Google Calendar booking page. Shows only when online_booking is on.
+Optional: key (one clinic only), compact=true (buttons only). A clinic without booking_url shows nothing, except a demo note while site.draft.{%- endcomment -%}
+{%- assign lang = page.lang | default: "en" -%}{%- assign t = site.data.i18n[lang] -%}{%- assign c = site.data.clinic -%}
+{%- if c.online_booking %}
+{%- assign shown = 0 %}{% assign missing = 0 %}
+{%- capture btns %}
+  {%- for l in c.locations %}{% if include.key == nil or include.key == l.key %}
+  {%- if l.booking_url != "" and l.booking_url %}{% assign shown = shown | plus: 1 %}
+  <a class="btn btn-primary btn-lg" href="{{ l.booking_url }}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>{% if include.compact %}{{ t.book_online_h }}{% else %}{{ l.name }}{% endif %}<span class="sr-only"> {{ t.opens_new_tab }}</span></a>
+  {%- elsif site.draft %}{% assign shown = shown | plus: 1 %}{% assign missing = missing | plus: 1 %}
+  <a class="btn btn-primary btn-lg" href="#online-demo"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>{% if include.compact %}{{ t.book_online_h }}{% else %}{{ l.name }}{% endif %}</a>
+  {%- endif %}{% endif %}{% endfor %}
+{%- endcapture %}
+{%- if shown > 0 %}
+<div class="book-online{% if include.compact %} book-online-compact{% endif %}">
+  {%- unless include.compact %}
+  <h2>{{ t.book_online_h }}</h2>
+  <p class="lead">{{ t.book_online_text }}</p>
+  {%- endunless %}
+  <div class="book-online-btns">{{ btns }}
+  </div>
+  <p class="form-note">{{ t.book_online_note }}</p>
+  {%- if missing > 0 %}
+  <aside class="demo-note" id="online-demo" aria-label="About this demo">
+    <span class="demo-tag">Demo</span>
+    <div><p><strong>Online booking.</strong> Each button opens the clinic's own Google Calendar booking page, where patients pick an open first-visit time. Names and times go straight into the clinic's Google account, never through this website.</p>
+    <p class="demo-needs"><span>To set up:</span> paid Google Workspace with Google's HIPAA agreement (BAA) turned on, Google Calendar as the clinic's real schedule, and one booking page per clinic asking for contact details only.</p></div>
+  </aside>
+  {%- endif %}
+</div>
+{%- endif %}
+{%- endif %}

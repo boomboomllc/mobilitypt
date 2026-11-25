@@ -21,6 +21,10 @@ hours_text: Monday to Thursday, 8 am to 7 pm. Friday to Sunday, closed. By appoi
 hours_short: Mon to Thu, 8 am to 7 pm
 hours_closed: Fri to Sun, closed
 open_days: [1, 2, 3, 4]
+# Online booking for FIRST visits through Google Calendar appointment schedules (needs paid Google Workspace
+# with Google's HIPAA BAA accepted). online_booking: false hides every "Book online" button and the site is phone-only.
+# Each clinic's booking_url is its Google booking page link. While the site is a draft, a missing link shows a demo note.
+online_booking: true
 # The clinic's current new patient form. At launch, copy the PDF into the site and point this at the copy.
 new_patient_form: https://mobilitypt.net/wp-content/uploads/2025/04/New-Patient-Info-2025.pdf  # 1 = Monday. Also update OPEN_DAYS in assets/script.js
 
@@ -39,6 +43,7 @@ locations:
     maps: https://www.google.com/maps/search/?api=1&query=3002+Dow+Ave+Suite+318+Tustin+CA+92780
     # Opens the clinic on Google Maps, where people can leave a review. Swap in the exact review link from the Google Business Profile when there is access.
     google: https://www.google.com/maps/search/?api=1&query=Mobility+Physical+Therapy+Tustin+CA
+    booking_url: ""  # Google Calendar booking page for this clinic
     photo: https://mobilitypt.net/wp-content/uploads/2019/05/7-1000x500.jpg
     photo_alt: Mobility Physical Therapy sign over the Tustin clinic entrance
     gallery:
@@ -64,6 +69,7 @@ locations:
     maps: https://www.google.com/maps/search/?api=1&query=23161+Lake+Center+Dr+Suite+230+Lake+Forest+CA+92630
     # Opens the clinic on Google Maps, where people can leave a review. Swap in the exact review link from the Google Business Profile when there is access.
     google: https://www.google.com/maps/search/?api=1&query=Mobility+Physical+Therapy+Lake+Forest+CA
+    booking_url: ""  # Google Calendar booking page for this clinic
     photo: https://mobilitypt.net/wp-content/uploads/2025/04/Front-view-1-1000x500.jpg
     photo_alt: The Lake Center Drive building that houses the Lake Forest clinic
     gallery:

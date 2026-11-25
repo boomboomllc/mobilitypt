@@ -32,8 +32,8 @@ faq:
     <ol class="steps">
       <li>
         <span class="step-num">1</span>
-        <h3>Llame para pedir su cita</h3>
-        <p>Llame a la clínica más cercana. Buscamos una hora que le funcione.</p>
+        <h3>{% if site.data.clinic.online_booking %}Pida su cita en línea o llame{% else %}Llame para pedir su cita{% endif %}</h3>
+        <p>{% if site.data.clinic.online_booking %}Elija un horario disponible en línea, o llame a la clínica más cercana.{% else %}Llame a la clínica más cercana. Buscamos una hora que le funcione.{% endif %}</p>
       </li>
       <li>
         <span class="step-num">2</span>

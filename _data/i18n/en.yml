@@ -33,6 +33,11 @@ hours_closed: Fri to Sun, closed
 week_days: [Mo, Tu, We, Th, Fr, Sa, Su]
 hours_time: "8 am – 7 pm"
 # Call-first booking
+book_online_h: "Book your first visit online"
+book_online_text: "Pick an open time at the clinic you prefer. We'll call to confirm your insurance before your visit."
+book_online_note: "First visits only. Please share contact details only, no health details. Current patients, please call to book your next visit."
+book_call_h: "Prefer to call?"
+book_intro: "Our front desk checks your insurance before your first visit."
 call_either: "Call either clinic"
 book_ready_h: "Have these ready when you call"
 book_ready:

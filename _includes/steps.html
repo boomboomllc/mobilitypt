@@ -2,8 +2,8 @@
 <ol class="steps">
   <li>
     <span class="step-num">1</span>
-    <h3>Call to book</h3>
-    <p>Call the clinic closest to you. We'll find a time that works.</p>
+    <h3>{% if site.data.clinic.online_booking %}Book online or call{% else %}Call to book{% endif %}</h3>
+    <p>{% if site.data.clinic.online_booking %}Pick an open time online, or call the clinic closest to you.{% else %}Call the clinic closest to you. We'll find a time that works.{% endif %}</p>
   </li>
   <li>
     <span class="step-num">2</span>

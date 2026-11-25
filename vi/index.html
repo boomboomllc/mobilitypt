@@ -39,7 +39,7 @@ schema_all_locations: true
     <div class="tiles">
       <a class="tile tile-primary" href="{{ '/vi/book/' | relative_url }}">
         <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
-        <strong>Đặt lịch hẹn</strong><span>Gọi phòng khám</span>
+        <strong>Đặt lịch hẹn</strong><span>{% if site.data.clinic.online_booking %}Đặt trực tuyến hoặc gọi điện{% else %}Gọi phòng khám{% endif %}</span>
       </a>
       <a class="tile" href="{{ '/vi/insurance/' | relative_url }}">
         <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>

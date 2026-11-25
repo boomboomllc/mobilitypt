@@ -33,6 +33,11 @@ hours_closed: Vie. a dom., cerrado
 week_days: [Lu, Ma, Mi, Ju, Vi, Sá, Do]
 hours_time: "8 a.m. – 7 p.m."
 # Call-first booking
+book_online_h: "Pida su primera cita en línea"
+book_online_text: "Elija un horario disponible en la clínica que prefiera. Le llamaremos para confirmar su seguro antes de su visita."
+book_online_note: "Solo para primeras visitas. Comparta solo sus datos de contacto, sin información de salud. Si ya es paciente, llame para su próxima visita."
+book_call_h: "¿Prefiere llamar?"
+book_intro: "La recepción revisa su seguro antes de su primera visita."
 call_either: "Llame a cualquiera de las clínicas"
 book_ready_h: "Tenga esto a mano cuando llame"
 book_ready:

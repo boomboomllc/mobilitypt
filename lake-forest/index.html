@@ -94,13 +94,16 @@ faq:
   <div class="wrap split split-top">
     <div>
       <h2>Book a visit in {{ l.name }}</h2>
-      <p class="lead">Call the {{ l.name }} clinic. Our front desk finds a time that works for you and checks your insurance before you come in.</p>
+      <p class="lead">{% if c.online_booking %}Book your first visit online, or call the {{ l.name }} clinic.{% else %}Call the {{ l.name }} clinic.{% endif %} Our front desk checks your insurance before you come in.</p>
       <ul class="trust">
         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Need to change a visit? Just call the clinic.</li>
         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Calling after hours? <a href="{{ '/contact/#callback' | relative_url }}">Ask us to call you back</a>.</li>
       </ul>
     </div>
-    {% include call-panel.html key=l.key %}
+    <div>
+      {% include book-online.html key=l.key compact=true %}
+      {% include call-panel.html key=l.key %}
+    </div>
   </div>
 </section>
 

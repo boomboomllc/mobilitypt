@@ -1,7 +1,16 @@
 {%- comment -%}The Book page: booking is by phone. Words live in _data/i18n (book_*).{%- endcomment -%}
 {%- assign lang = page.lang | default: "en" -%}{%- assign t = site.data.i18n[lang] -%}{%- assign c = site.data.clinic -%}
+{%- if c.online_booking %}
+<section class="section section-sm">
+  <div class="wrap">
+    {% include book-online.html %}
+  </div>
+</section>
+{%- endif %}
+
 <section class="section">
   <div class="wrap">
+    {%- if c.online_booking %}<h2>{{ t.book_call_h }}</h2>{% endif %}
     <div class="locations">
       {%- for l in c.locations %}
       {% include location-card.html key=l.key %}

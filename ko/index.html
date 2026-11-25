@@ -39,7 +39,7 @@ schema_all_locations: true
     <div class="tiles">
       <a class="tile tile-primary" href="{{ '/ko/book/' | relative_url }}">
         <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
-        <strong>예약하기</strong><span>클리닉에 전화하세요</span>
+        <strong>예약하기</strong><span>{% if site.data.clinic.online_booking %}온라인 또는 전화 예약{% else %}클리닉에 전화하세요{% endif %}</span>
       </a>
       <a class="tile" href="{{ '/ko/insurance/' | relative_url }}">
         <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>

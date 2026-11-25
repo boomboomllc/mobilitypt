@@ -32,8 +32,8 @@ faq:
     <ol class="steps">
       <li>
         <span class="step-num">1</span>
-        <h3>Gọi để đặt hẹn</h3>
-        <p>Gọi cho phòng khám gần quý vị nhất. Chúng tôi sẽ tìm giờ thuận tiện cho quý vị.</p>
+        <h3>{% if site.data.clinic.online_booking %}Đặt hẹn trực tuyến hoặc gọi điện{% else %}Gọi để đặt hẹn{% endif %}</h3>
+        <p>{% if site.data.clinic.online_booking %}Chọn giờ còn trống trực tuyến, hoặc gọi cho phòng khám gần quý vị nhất.{% else %}Gọi cho phòng khám gần quý vị nhất. Chúng tôi sẽ tìm giờ thuận tiện cho quý vị.{% endif %}</p>
       </li>
       <li>
         <span class="step-num">2</span>
