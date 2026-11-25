@@ -582,7 +582,6 @@ progress::-moz-progress-bar { background: var(--navy); }
 
 @media (max-width: 760px) {
   .top-social { display: none; }
-  .top-contact > a { display: none; }
 }
 
 @media (max-width: 640px) {
