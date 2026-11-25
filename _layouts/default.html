@@ -54,6 +54,7 @@
   <div class="wrap top-row">
     <div class="top-contact">
       <span><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{% for l in c.locations %}{{ l.name }}: <a href="tel:{{ l.phone_tel }}">{{ l.phone }}</a>{% unless forloop.last %}&nbsp;&middot;&nbsp;{% endunless %}{% endfor %}</span>
+      <a class="top-email" href="mailto:{{ c.email }}"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>{{ c.email }}</a>
     </div>
     {%- include lang-switch.html %}
     <div class="top-social">

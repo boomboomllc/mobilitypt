@@ -582,6 +582,10 @@ progress::-moz-progress-bar { background: var(--navy); }
   .photo img { aspect-ratio: 4 / 3; }
 }
 
+@media (max-width: 1000px) {
+  .top-email { display: none !important; }
+}
+
 @media (max-width: 760px) {
   .top-social { display: none; }
 }
