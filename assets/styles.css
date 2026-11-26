@@ -270,7 +270,7 @@ img { max-width: 100%; display: block; }
   display: flex; flex-direction: column; gap: 20px;
 }
 .review::before { content: "\201C"; font-family: var(--display); font-size: 72px; line-height: .5; color: var(--navy); height: 28px; opacity: .35; }
-.review blockquote { margin: 0; font-size: 17px; line-height: 1.6; color: var(--text); flex: 1; }
+.review blockquote { margin: 0; font-family: var(--display); font-size: 22px; line-height: 1.35; color: var(--ink); flex: 1; }
 .review figcaption { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--ink); font-size: 15.5px; padding-top: 18px; border-top: 1px solid var(--border); }
 .review figcaption::before {
   content: ""; width: 34px; height: 34px; border-radius: 50%; flex: none;
